@@ -35,7 +35,7 @@ This branching strategy uses a combination of feature branches with pull request
 
 * Main branch is protected
 * Pull requests must be approved before merge to the main branch.
-* We use pull requests to enforce and document our code review process.  You can read more about it here: [Code Review Process]({{< relref "/controls/process/code_review" >}})
+* We use pull requests to enforce and document our code review process.  You can read more about it here: [Code Review Process]({{< relref "/controls/release/code_review" >}})
 * Pull request merges should create merge or squash commits. (no fast-forward)
 
 
@@ -50,7 +50,7 @@ This allows a model similar to trunk-based-development, where code reviews are i
 
 * Production branch is protected
 * Pull requests must be approved before merge to production.
-* We use pull requests to enforce and document our code review process.  You can read more about it here: [Code Review Process]({{< relref "/controls/process/code_review" >}})
+* We use pull requests to enforce and document our code review process.  You can read more about it here: [Code Review Process]({{< relref "/controls/release/code_review" >}})
 * Pull request merges will fast-forward. This means the production branch will always “point” to a commit on the main branch
 
 ### Protected Deployment Branches
