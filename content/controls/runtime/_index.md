@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Change Controls
+title: Runtime Controls
 bookCollapseSection: false
 bookFlatSection: true
 ---

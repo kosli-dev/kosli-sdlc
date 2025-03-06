@@ -2,7 +2,7 @@
 title: Security Vulnerability Scanning
 level: 1
 weight: 30
-control_code: KVC3
+control_code: KRC3
 tldr: Software is scanned for security vulnerabilities prior to deployment
 rationale: Many common security vulnerabilities can be detected with automated tools.  By implementing tools for dependency scanning, SAST, and DAST in the pipeline we can reduce the attack surface of our software
 areas: 

@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Validation Controls
+title: Release Controls
 bookCollapseSection: false
 bookFlatSection: true
 ---

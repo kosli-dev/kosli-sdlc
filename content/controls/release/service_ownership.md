@@ -2,7 +2,7 @@
 title: Service ownership
 level: 1
 weight: 50
-control_code: KVC5
+control_code: KRC5
 tldr: All services running in our environments have registered ownership
 rationale: In a diverse software landscape it is essential everyone knows who
   is responsible for maintaince and support
