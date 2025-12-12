@@ -16,6 +16,7 @@ theme = "hugo-book"
   repoLink = 'https://github.com/kosli-dev/kosli-sdlc'
   logo = 'svg/logo.svg'
   BookSection = '/'
+  BookFavicon = 'favicon.ico'
 
 [markup]
 [markup.goldmark.renderer]
