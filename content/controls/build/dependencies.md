@@ -37,5 +37,5 @@ We define these dependencies in the source code, at the application level and if
 | Application | Dependencies |
 | ----------- | ------------ |
 | CLI | [Golang Dependencies](https://github.com/kosli-dev/cli/blob/main/go.mod) |
-| Server | [Python Dependencies](https://github.com/kosli-dev/server/blob/master/src/requirements.txt) <br/> [Docker Dependencies](https://github.com/kosli-dev/server/blob/master/Dockerfile) |
+| Server | [Python Dependencies](https://github.com/kosli-dev/server/blob/master/src/requirements.txt) <br/> [Docker Dependencies](https://github.com/kosli-dev/server/blob/master/Dockerfile) <br /> [NPM Dependencies](https://github.com/kosli-dev/server/blob/master/package.json) |
 | Slack Application | [Python Dependencies](https://github.com/kosli-dev/slack-auth-app/blob/main/src/requirements.txt) <br/> [Docker Dependencies](https://github.com/kosli-dev/slack-auth-app/blob/main/Dockerfile) |
