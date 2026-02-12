@@ -27,8 +27,6 @@ Automated secrets scanning is implemented at multiple stages:
 3. **Container image scanning** - Ensure no secrets are baked into images
 4. **IaC scanning** - Verify secrets are passed via secure parameter injection, not hardcoded
 
-{{< figure src="/images/secrets-scanning.svg" alt="Secrets Scanning" >}}
-
 ## Requirements
 
 ### Code and Configuration
