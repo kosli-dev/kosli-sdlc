@@ -228,6 +228,11 @@ h2.area-header{
     border-color:  var(--green-100);
 }
 
+// The default color of the build card when no index is provided
+.control-card.area-build {
+    background-color:  var(--green-050);
+    border-color:  var(--green-100);
+}
 
 .control-card.area-process.card-index-0 {
     background-color:  var(--blue-300);
@@ -250,6 +255,12 @@ h2.area-header{
 }
 
 .control-card.area-process.card-index-4 {
+    background-color:  var(--blue-050);
+    border-color: var(--blue-100);
+}
+
+// The default color of the process card when no index is provided
+.control-card.area-process {
     background-color:  var(--blue-050);
     border-color: var(--blue-100);
 }
@@ -280,6 +291,11 @@ h2.area-header{
     border-color: var(--yellow-100);
 }
 
+// The default color of the change card when no index is provided
+.control-card.area-change {
+    background-color:  var(--yellow-050);
+    border-color: var(--yellow-100);
+}
 
 div.control-card:hover {
     background-color: var(--blue-500) !important;
