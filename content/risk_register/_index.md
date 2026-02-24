@@ -1,10 +1,10 @@
 ---
 weight: 15
 bookFlatSection: false
+bookCollapseSection: true
 title: "Risk Register"
 ---
 
 # Risk Register
 
-This page lists the mapping of risks to controls in our software process
-{{< risks >}}
+This section lists the risks identified in our software process and the controls that mitigate them.
