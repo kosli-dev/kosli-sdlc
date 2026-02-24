@@ -1,0 +1,13 @@
+risk:
+  risk_key: vulnerable_software_in_production
+  display_name: Vulnerable Software in Production
+  description: Known vulnerabilities in code or dependencies are exploited in the production environment.
+  mitigations:
+  - hreflink: "/controls/release/security/"
+    hreftext: "Security Vulnerability Scanning"
+  - hreflink: "/controls/build/dependencies/"
+    hreftext: "Dependency Management"
+  - hreflink: "/controls/runtime/workload_monitoring/"
+    hreftext: "Workload Monitoring"
+  - hreflink: "/controls/release/quality/"
+    hreftext: "Quality"

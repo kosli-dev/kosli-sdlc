@@ -1,0 +1,9 @@
+risk:
+  risk_key: unauthorised_system_access
+  display_name: Unauthorised System Access
+  description: Production environments are accessed by personnel without appropriate authorisation or without full audit trails.
+  mitigations:
+  - hreflink: "/controls/runtime/system_access/"
+    hreftext: "System Access Controls"
+  - hreflink: "/controls/runtime/secrets_managment/"
+    hreftext: "Secrets Management"

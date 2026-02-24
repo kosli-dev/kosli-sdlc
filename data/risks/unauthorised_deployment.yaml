@@ -1,0 +1,13 @@
+risk:
+  risk_key: unauthorised_deployment
+  display_name: Unauthorised Deployment
+  description: Software is deployed to production without passing required quality gates, security scans, or approval checks.
+  mitigations:
+  - hreflink: "/controls/release/deployment_approvals/"
+    hreftext: "Deployment Approvals"
+  - hreflink: "/controls/build/binary_provenance/"
+    hreftext: "Binary Provenance"
+  - hreflink: "/controls/runtime/deployment_controls/"
+    hreftext: "Deployment Controls"
+  - hreflink: "/controls/runtime/workload_monitoring/"
+    hreftext: "Workload Monitoring"

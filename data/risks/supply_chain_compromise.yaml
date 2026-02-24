@@ -1,0 +1,13 @@
+risk:
+  risk_key: supply_chain_compromise
+  display_name: Supply Chain Compromise
+  description: Malicious or tampered software enters the build via compromised dependencies, base images, or third-party tooling.
+  mitigations:
+  - hreflink: "/controls/build/binary_provenance/"
+    hreftext: "Binary Provenance"
+  - hreflink: "/controls/build/dependencies/"
+    hreftext: "Dependency Management"
+  - hreflink: "/controls/build/toolchain/"
+    hreftext: "Toolchain"
+  - hreflink: "/controls/release/security/"
+    hreftext: "Security Vulnerability Scanning"
