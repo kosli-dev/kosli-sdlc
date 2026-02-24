@@ -1,7 +1,0 @@
-risk:
-  risk_key: environment_breach
-  display_name: Environment Breach
-  description: External attacker running workloads in our system
-  mitigations:
-  - hreflink: "/process/ssdlc/runtime/workload_monitoring/"
-    hreftext: "Workload monitoring"

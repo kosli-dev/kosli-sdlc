@@ -1,0 +1,10 @@
+<blockquote class="book-hint info">
+  {{ .Page.Params.description }}
+</blockquote>
+
+<h3>Mapped Controls</h3>
+<ul>
+{{ range .Page.Params.mitigations }}
+  <li><a href="{{ .url }}">{{ .name }}</a></li>
+{{ end }}
+</ul>
