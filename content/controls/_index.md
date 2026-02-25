@@ -21,3 +21,4 @@ The DevSecOps Framework provides:
 
 {{< /columns >}}
 
+{{< map >}}
