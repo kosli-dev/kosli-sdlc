@@ -2,6 +2,8 @@
 weight: 30
 bookFlatSection: false
 title: "Training"
+areas:
+ - lifecycle
 ---
 
 # Training

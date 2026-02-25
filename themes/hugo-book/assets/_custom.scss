@@ -197,6 +197,13 @@ ul.control-list {
     padding-top: 10px;
 }
 
+.risk-card-row {
+    display: grid;
+    grid-template-columns: repeat(5, 110px);
+    gap: 10px;
+    padding-top: 10px;
+}
+
 h2.area-header{
     margin-bottom: 0px;
     margin-top: 1em;
@@ -296,6 +303,69 @@ h2.area-header{
     background-color:  var(--yellow-050);
     border-color: var(--yellow-100);
 }
+
+.control-card.area-lifecycle.card-index-0 {
+    background-color: var(--red-300);
+    border-color: var(--red-400);
+}
+
+.control-card.area-lifecycle.card-index-1 {
+    background-color: var(--red-200);
+    border-color: var(--red-300);
+}
+
+.control-card.area-lifecycle.card-index-2 {
+    background-color: var(--red-100);
+    border-color: var(--red-200);
+}
+
+.control-card.area-lifecycle.card-index-3 {
+    background-color: var(--red-100);
+    border-color: var(--red-100);
+}
+
+.control-card.area-lifecycle.card-index-4 {
+    background-color: var(--red-400);
+    border-color: var(--red-400);
+}
+
+// The default color of the lifecycle card when no index is provided
+.control-card.area-lifecycle {
+    background-color: var(--red-400);
+    border-color: var(--red-300);
+}
+
+.markdown .risk-card {
+    display: block;
+    width: 110px;
+    height: 110px;
+    border: 1px solid var(--red-300);
+    padding: 10px;
+    font-size: 12px;
+    color: var(--neutral-100) !important;
+    font-weight: 600;
+    background-color: var(--red-300);
+    &:hover {
+        background-color: var(--blue-500) !important;
+        border-color: var(--blue-500) !important;
+        opacity: 1;
+        text-decoration: none;
+        color: var(--neutral-100) !important;
+    }
+    &:visited {
+        color: var(--neutral-100) !important;
+    }
+}
+
+.risk-card.card-index-0 { background-color: var(--red-400); border-color: var(--red-400); }
+.risk-card.card-index-1 { background-color: var(--red-300); border-color: var(--red-300); }
+.risk-card.card-index-2 { background-color: var(--red-200); border-color: var(--red-200); }
+.risk-card.card-index-3 { background-color: var(--red-100); border-color: var(--red-100); }
+.risk-card.card-index-4 { background-color: var(--red-050); border-color: var(--red-050); }
+.risk-card.card-index-5 { background-color: var(--red-400); border-color: var(--red-400); }
+.risk-card.card-index-6 { background-color: var(--red-300); border-color: var(--red-300); }
+.risk-card.card-index-7 { background-color: var(--red-200); border-color: var(--red-200); }
+.risk-card.card-index-8 { background-color: var(--red-100); border-color: var(--red-100); }
 
 div.control-card:hover {
     background-color: var(--blue-500) !important;
