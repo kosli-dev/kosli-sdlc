@@ -4,7 +4,7 @@ title = "Kosli's Software Development Lifecycle"
 theme = "hugo-book"
 
 [taxonomies]
-  risk = 'risks'
+  risk = 'risk-tags'
   area = 'areas'
 
 [params]
