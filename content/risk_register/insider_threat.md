@@ -14,6 +14,14 @@ mitigations:
     url: "/controls/runtime/system_access/"
   - name: "Change Records"
     url: "/controls/runtime/change_records/"
+  - name: "Secrets Management"
+    url: "/controls/runtime/secrets_managment/"
+  - name: "Runtime Workload Monitoring"
+    url: "/controls/runtime/workload_monitoring/"
+  - name: "Deployment Controls"
+    url: "/controls/runtime/deployment_controls/"
+  - name: "Training"
+    url: "/controls/training/"
 ---
 
 # {{% param "title" %}}
