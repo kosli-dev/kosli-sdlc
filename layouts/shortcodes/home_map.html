@@ -1,0 +1,37 @@
+<!-- Risks -->
+<a href="/risks/"><h2 class="area-header">Risks</h2></a>
+{{ partial "risk_cards.html" (.Site.GetPage "/risks") }}
+
+<!-- Controls -->
+<a href="/controls/"><h2 class="area-header">Controls</h2></a>
+{{ range $taxonomy_name, $taxonomy := .Site.Taxonomies }}
+  {{ if (eq $taxonomy_name "areas") }}
+    {{ with ($.Site.GetPage (printf "/%s" $taxonomy_name)) }}
+      {{ range $index, $weightedArea := .Pages.ByWeight }}
+
+        <a href="/process/{{ .Page.Data.Term }}">
+          <h3 class="area-subheader">{{ .Page.LinkTitle }}</h3>
+        </a>
+
+        {{ $term := .Page.Data.Term }}
+        {{ with .Site.Taxonomies.areas }}
+          {{ range $area, $cards := . }}
+            {{ if eq $area $term }}
+              <div class="card-row">
+                {{ range $index, $card := $cards }}
+                  <a class="control-card area-{{ $term }} card-index-{{ $index }}" href="{{ .RelPermalink }}">
+                    {{ with .Params.control_code }}
+                    <div class="control-code">{{ . }}:</div>
+                    {{ end }}
+                    {{ .LinkTitle }}
+                  </a>
+                {{ end }}
+              </div>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}

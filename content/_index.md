@@ -5,4 +5,4 @@ bookToC: false
 ---
 
 
-{{< map >}}
+{{< home_map >}}

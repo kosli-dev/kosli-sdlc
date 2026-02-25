@@ -195,6 +195,7 @@ ul.control-list {
     flex-wrap: wrap;
     gap: 10px;
     padding-top: 10px;
+    max-width: 590px;
 }
 
 .risk-card-row {
@@ -371,4 +372,24 @@ div.control-card:hover {
     background-color: var(--blue-500) !important;
     border-color: var(--blue-500) !important;
     text-decoration: none;
+}
+
+.home-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.home-col-controls h3.area-subheader {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    margin-top: 1em;
+    color: var(--body-font-color);
+}
+
+@media (max-width: 900px) {
+    .home-layout {
+        grid-template-columns: 1fr;
+    }
 }

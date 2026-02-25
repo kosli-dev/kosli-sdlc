@@ -1,0 +1,7 @@
+<div class="card-row">
+  {{ range $index, $page := .Pages.ByWeight }}
+    <a class="risk-card card-index-{{ $index }}" href="{{ $page.RelPermalink }}">
+      {{ $page.LinkTitle }}
+    </a>
+  {{ end }}
+</div>
