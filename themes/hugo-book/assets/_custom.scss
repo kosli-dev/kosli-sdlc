@@ -236,6 +236,12 @@ h2.area-header{
     border-color:  var(--green-100);
 }
 
+// Row wrap: index 5 restarts at column 0
+.control-card.area-build.card-index-5 {
+    background-color:  var(--green-300);
+    border-color:  var(--green-400);
+}
+
 // The default color of the build card when no index is provided
 .control-card.area-build {
     background-color:  var(--green-050);
@@ -265,6 +271,12 @@ h2.area-header{
 .control-card.area-process.card-index-4 {
     background-color:  var(--blue-050);
     border-color: var(--blue-100);
+}
+
+// Row wrap: index 5 restarts at column 0
+.control-card.area-process.card-index-5 {
+    background-color:  var(--blue-300);
+    border-color: var(--blue-400);
 }
 
 // The default color of the process card when no index is provided
@@ -299,6 +311,12 @@ h2.area-header{
     border-color: var(--yellow-100);
 }
 
+// Row wrap: index 5 restarts at column 0
+.control-card.area-change.card-index-5 {
+    background-color:  var(--yellow-300);
+    border-color: var(--yellow-400);
+}
+
 // The default color of the change card when no index is provided
 .control-card.area-change {
     background-color:  var(--yellow-050);
@@ -327,6 +345,12 @@ h2.area-header{
 
 .control-card.area-lifecycle.card-index-4 {
     background-color: var(--red-400);
+    border-color: var(--red-400);
+}
+
+// Row wrap: index 5 restarts at column 0
+.control-card.area-lifecycle.card-index-5 {
+    background-color: var(--red-300);
     border-color: var(--red-400);
 }
 
@@ -367,6 +391,38 @@ h2.area-header{
 .risk-card.card-index-6 { background-color: var(--red-300); border-color: var(--red-300); }
 .risk-card.card-index-7 { background-color: var(--red-200); border-color: var(--red-200); }
 .risk-card.card-index-8 { background-color: var(--red-100); border-color: var(--red-100); }
+
+// Responsive column-based card colors (overrides static card-index)
+// JS sets data-visual-col based on actual column position after flex wrap
+.markdown .control-card.area-build[data-visual-col="0"] { background-color: var(--green-300); border-color: var(--green-400); }
+.markdown .control-card.area-build[data-visual-col="1"] { background-color: var(--green-200); border-color: var(--green-300); }
+.markdown .control-card.area-build[data-visual-col="2"] { background-color: var(--green-100); border-color: var(--green-200); }
+.markdown .control-card.area-build[data-visual-col="3"] { background-color: var(--green-100); border-color: var(--green-100); }
+.markdown .control-card.area-build[data-visual-col="4"] { background-color: var(--green-050); border-color: var(--green-100); }
+
+.markdown .control-card.area-process[data-visual-col="0"] { background-color: var(--blue-300); border-color: var(--blue-400); }
+.markdown .control-card.area-process[data-visual-col="1"] { background-color: var(--blue-200); border-color: var(--blue-300); }
+.markdown .control-card.area-process[data-visual-col="2"] { background-color: var(--blue-100); border-color: var(--blue-200); }
+.markdown .control-card.area-process[data-visual-col="3"] { background-color: var(--blue-100); border-color: var(--blue-100); }
+.markdown .control-card.area-process[data-visual-col="4"] { background-color: var(--blue-050); border-color: var(--blue-100); }
+
+.markdown .control-card.area-change[data-visual-col="0"] { background-color: var(--yellow-300); border-color: var(--yellow-400); }
+.markdown .control-card.area-change[data-visual-col="1"] { background-color: var(--yellow-200); border-color: var(--yellow-300); }
+.markdown .control-card.area-change[data-visual-col="2"] { background-color: var(--yellow-100); border-color: var(--yellow-200); }
+.markdown .control-card.area-change[data-visual-col="3"] { background-color: var(--yellow-100); border-color: var(--yellow-100); }
+.markdown .control-card.area-change[data-visual-col="4"] { background-color: var(--yellow-050); border-color: var(--yellow-100); }
+
+.markdown .control-card.area-lifecycle[data-visual-col="0"] { background-color: var(--red-300); border-color: var(--red-400); }
+.markdown .control-card.area-lifecycle[data-visual-col="1"] { background-color: var(--red-200); border-color: var(--red-300); }
+.markdown .control-card.area-lifecycle[data-visual-col="2"] { background-color: var(--red-100); border-color: var(--red-200); }
+.markdown .control-card.area-lifecycle[data-visual-col="3"] { background-color: var(--red-100); border-color: var(--red-100); }
+.markdown .control-card.area-lifecycle[data-visual-col="4"] { background-color: var(--red-050); border-color: var(--red-100); }
+
+.markdown .risk-card[data-visual-col="0"] { background-color: var(--red-400); border-color: var(--red-400); }
+.markdown .risk-card[data-visual-col="1"] { background-color: var(--red-300); border-color: var(--red-300); }
+.markdown .risk-card[data-visual-col="2"] { background-color: var(--red-200); border-color: var(--red-200); }
+.markdown .risk-card[data-visual-col="3"] { background-color: var(--red-100); border-color: var(--red-100); }
+.markdown .risk-card[data-visual-col="4"] { background-color: var(--red-050); border-color: var(--red-050); }
 
 div.control-card:hover {
     background-color: var(--blue-500) !important;
@@ -456,7 +512,37 @@ div.control-card:hover {
     --hint-color-danger: #f66;
 
     --header-color: #000E41;
-    --green: #29B57D;
+    --green: #1a8a5c;
+
+    // Desaturated, darkened color palette for cards
+    // Gradient: 300 = most muted (card-index-0) → 050 = most vivid (card-index-4)
+    --green-050: #0a8058;
+    --green-100: #106848;
+    --green-200: #155038;
+    --green-300: #1a3828;
+    --green-400: #142a1e;
+    --green-500: #001a12;
+
+    --blue-050: #0a68a8;
+    --blue-100: #105088;
+    --blue-200: #153a68;
+    --blue-300: #1a2845;
+    --blue-400: #141e38;
+    --blue-500: #0a1a40;
+
+    --yellow-050: #987a10;
+    --yellow-100: #786015;
+    --yellow-200: #584818;
+    --yellow-300: #38301a;
+    --yellow-400: #2a2010;
+    --yellow-500: #1a1400;
+
+    --red-050: #983040;
+    --red-100: #782838;
+    --red-200: #582030;
+    --red-300: #381820;
+    --red-400: #2a1018;
+    --red-500: #1a0808;
 
     // Override neutral/black palette for dark context
     --neutral-200: #21272e;
