@@ -1,7 +1,7 @@
 ---
 title: Secrets Scanning
 weight: 60
-control_code: KBC6
+control_code: SDLC-CTRL-0006
 level: 1
 areas:
  - build

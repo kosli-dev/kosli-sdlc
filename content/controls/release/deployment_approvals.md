@@ -2,7 +2,7 @@
 title: "Deployment Approvals"
 level: 1
 weight: 40
-control_code: KRC4
+control_code: SDLC-CTRL-0010
 tldr: Deployments are approved
 rationale: To meet segregation of duties requirements, all deploymnents to production are approved by someone other than the person making the change
 areas: 

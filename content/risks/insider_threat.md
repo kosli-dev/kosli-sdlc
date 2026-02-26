@@ -1,6 +1,7 @@
 ---
 title: "Insider Threat"
 weight: 20
+risk_id: SDLC-RISK-0002
 risk_key: insider_threat
 description: "Authorized personnel (developers, contractors, administrators, or other trusted users) with legitimate access to source code repositories, development environments, production systems, or sensitive data may intentionally or unintentionally compromise the confidentiality, integrity, or availability of software assets."
 mitigations:

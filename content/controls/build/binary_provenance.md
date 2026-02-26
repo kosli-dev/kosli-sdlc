@@ -1,7 +1,7 @@
 ---
 title: Artifact Binary Provenance
 weight: 20
-control_code: KBC2
+control_code: SDLC-CTRL-0002
 areas: 
  - build
 tldr: Every software running in a production system has known provenance

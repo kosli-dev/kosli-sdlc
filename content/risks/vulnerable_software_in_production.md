@@ -1,6 +1,7 @@
 ---
 title: "Vulnerable Software in Production"
 weight: 50
+risk_id: SDLC-RISK-0005
 risk_key: vulnerable_software_in_production
 description: "Known vulnerabilities in code or dependencies are exploited in the production environment."
 mitigations:
