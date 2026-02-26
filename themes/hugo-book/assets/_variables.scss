@@ -1,40 +1,60 @@
 /* You can override SASS variables here. */
 
 // @import "plugins/dark";
+
+// Override hint colors with Kosli brand palette
+$hint-colors: (
+  info: #1E55CD,
+  warning: #E5BE65,
+  danger: #C8463A,
+);
+
 :root {
-    --blue-050: #0942C5;
-    --blue-100: #2459D1;
+    // Primary Blues
+    --blue-050: #0041AF;
+    --blue-100: #1E55CD;
     --blue-200: #4B75D9;
     --blue-300: #7293E1;
-    --blue-400: #D0D6E8;
-    --blue-500: #000D40;
-    --green-050: #06A163;
-    --green-100: #29B57D;
-    --green-200: #4FB98C;
-    --green-300: #86CFB0;
+    --blue-400: #B4C5FF;
+    --blue-500: #101C2B;
+    // Green - Compliant
+    --green-050: #006D43;
+    --green-100: #4EAC78;
+    --green-200: #59B281;
+    --green-300: #7FD9A5;
     --green-400: #CBEADD;
-    --green-500: #001D16;
-    --red-050: #D7122B;
-    --red-100: #ED475C;
-    --red-200: #F06173;
-    --red-300: #F38593;
-    --red-400: #FBD5DA;
-    --red-500: #1F0808;
-    --yellow-050: #EEB002;
-    --yellow-100: #F7C22E;
-    --yellow-200: #F8CD54;
-    --yellow-300: #F9D776;
+    --green-500: #004126;
+    // Red - Error
+    --red-050: #A62E25;
+    --red-100: #C8463A;
+    --red-200: #E07060;
+    --red-300: #F0998F;
+    --red-400: #FFB4AA;
+    --red-500: #690003;
+    // Yellow - Warning
+    --yellow-050: #775A04;
+    --yellow-100: #AE8C35;
+    --yellow-200: #E5BE65;
+    --yellow-300: #FFDB8B;
     --yellow-400: #FBE6AA;
-    --yellow-500: #1F1400;
-    --orange-100: #FF8900;
+    --yellow-500: #664C00;
+    // Orange - Lifecycle
+    --orange-050: #8B4B00;
+    --orange-100: #B86500;
+    --orange-200: #FF8900;
+    --orange-300: #FFB35C;
+    --orange-400: #FFD9A8;
+    --orange-500: #5C3200;
+    // Neutral - Surface system
     --neutral-100: #FFFFFF;
     --neutral-200: #F7F9FC;
-    --neutral-300: #E6E7F2;
-    --neutral-400: #CCCFE4;
-    --neutral-500: #969BAC;
-    --black-100: #171C21;
-    --black-200: #626669;
-    --black-300: #B3B4B6;
-    --black-400: #DEDEDE;
-    --black-500: #F7F7F7;
+    --neutral-300: #E1E2E5;
+    --neutral-400: #C5C6CB;
+    --neutral-500: #75777B;
+    // Black - On Surface system
+    --black-100: #1C1B1B;
+    --black-200: #575D63;
+    --black-300: #8E9195;
+    --black-400: #D9D9DD;
+    --black-500: #F2F3F6;
 }
