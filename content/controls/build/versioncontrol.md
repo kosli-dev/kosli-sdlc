@@ -1,7 +1,7 @@
 ---
 title: Version Control
 weight: 10
-control_code: KBC1
+control_code: SDLC-CTRL-0001
 level: 1
 areas: 
  - build

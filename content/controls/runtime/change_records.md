@@ -2,7 +2,7 @@
 title: Change Records
 level: 1
 weight: 10
-control_code: KCC1
+control_code: SDLC-CTRL-0012
 tldr: All systems and services maintain a record of changes
 rationale: To meet our change management requirements, all changes to production systems are recorded permanently
 areas: 

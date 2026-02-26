@@ -1,6 +1,7 @@
 ---
 title: "Credential and Secret Exposure"
 weight: 40
+risk_id: SDLC-RISK-0004
 risk_key: credential_and_secret_exposure
 description: "Leaked or poorly managed secrets enable unauthorised access to production systems, customer data, or CI/CD pipelines."
 mitigations:

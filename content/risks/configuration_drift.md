@@ -1,6 +1,7 @@
 ---
 title: "Configuration Drift"
 weight: 80
+risk_id: SDLC-RISK-0008
 risk_key: configuration_drift
 description: "Infrastructure or application configuration diverges from its known, approved state, causing undetected changes in security posture or behaviour."
 mitigations:

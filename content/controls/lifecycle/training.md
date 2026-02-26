@@ -2,6 +2,7 @@
 weight: 30
 bookFlatSection: false
 title: "Training"
+control_code: SDLC-CTRL-0017
 areas:
  - lifecycle
 ---

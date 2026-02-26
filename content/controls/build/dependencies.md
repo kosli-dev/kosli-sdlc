@@ -1,7 +1,7 @@
 ---
 title: Dependency Management
 weight: 40
-control_code: KBC4
+control_code: SDLC-CTRL-0004
 areas: 
  - build
 tldr: Every dependency is defined securely, managed, and auditable

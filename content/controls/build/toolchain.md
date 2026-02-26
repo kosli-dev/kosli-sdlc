@@ -2,7 +2,7 @@
 title: Controlled Build Environment
 level: 3
 weight: 30
-control_code: KBC3
+control_code: SDLC-CTRL-0003
 areas: 
  - build
 tldr: Build environments must be defined as code, ephemeral, and auditable

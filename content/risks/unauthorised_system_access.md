@@ -1,6 +1,7 @@
 ---
 title: "Unauthorised System Access"
 weight: 70
+risk_id: SDLC-RISK-0007
 risk_key: unauthorised_system_access
 description: "Production environments are accessed by personnel without appropriate authorisation or without full audit trails."
 mitigations:

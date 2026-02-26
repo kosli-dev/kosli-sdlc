@@ -1,6 +1,7 @@
 ---
 title: "Audit and Compliance Failure"
 weight: 60
+risk_id: SDLC-RISK-0006
 risk_key: audit_and_compliance_failure
 description: "Inability to provide evidence of controls to regulators, auditors, or enterprise customers, resulting in reputational or commercial damage."
 mitigations:
