@@ -393,3 +393,117 @@ div.control-card:hover {
         grid-template-columns: 1fr;
     }
 }
+
+// Hide the mobile "Introduction" header bar
+.book-header {
+    display: none !important;
+}
+
+// Dark mode toggle button
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: $border-radius;
+    color: white;
+    cursor: pointer;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s;
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .icon-moon {
+        display: none;
+    }
+}
+
+[data-theme="dark"] .theme-toggle {
+    .icon-sun {
+        display: none;
+    }
+    .icon-moon {
+        display: block;
+    }
+}
+
+// Dark mode theme
+[data-theme="dark"] {
+    // Base theme variables
+    --gray-100: rgba(255, 255, 255, 0.1);
+    --gray-200: rgba(255, 255, 255, 0.2);
+    --gray-500: rgba(255, 255, 255, 0.5);
+
+    --color-link: #84b2ff;
+    --color-visited-link: #b88dff;
+
+    --body-background: #1a1f25;
+    --body-font-color: #d8dade;
+
+    --icon-filter: brightness(0) invert(1);
+
+    --hint-color-info: #6bf;
+    --hint-color-warning: #fd6;
+    --hint-color-danger: #f66;
+
+    --header-color: #000E41;
+    --green: #29B57D;
+
+    // Override neutral/black palette for dark context
+    --neutral-200: #21272e;
+    --neutral-300: #3a3f47;
+    --neutral-400: #4a4f57;
+    --neutral-500: #8a8f97;
+    --black-100: #d8dade;
+    --black-200: #a0a4a8;
+    --black-300: #6a6e72;
+    --black-400: #3a3f47;
+    --black-500: #21272e;
+
+    // Control card text stays white in dark mode
+    .markdown .control-card,
+    .markdown .control-card:visited,
+    .markdown .risk-card,
+    .markdown .risk-card:visited {
+        color: #ffffff !important;
+    }
+
+    // Search input
+    .book-search input {
+        border-color: var(--neutral-400);
+        background: var(--gray-200);
+    }
+
+    // Footer logo - invert for dark bg
+    .book-footer .footer-logo {
+        filter: brightness(0) invert(1);
+    }
+
+    // Markdown table rows
+    .markdown table tr:nth-child(2n) {
+        background: var(--gray-100);
+    }
+
+    // Code blocks
+    .markdown code {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .markdown pre {
+        background: #0d1117;
+    }
+
+    // Hint boxes (info, warning, danger)
+    .book-hint {
+        color: #d8dade;
+    }
+}

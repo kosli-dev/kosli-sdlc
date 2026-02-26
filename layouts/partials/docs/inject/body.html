@@ -1,0 +1,33 @@
+<script>
+(function() {
+  var toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+
+  function getPreferredTheme() {
+    var saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+
+  // Apply on load (also done in head for flash prevention)
+  applyTheme(getPreferredTheme());
+
+  toggle.addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme') || 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('theme', next);
+  });
+
+  // Listen for system preference changes (only if user hasn't explicitly chosen)
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    if (!localStorage.getItem('theme')) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+})();
+</script>
