@@ -2,6 +2,27 @@
 
 // @import "plugins/numbered";
 
+// Kosli brand theme overrides (light)
+// These override the theme-light mixin values from _defaults.scss
+:root {
+    --gray-100: #F2F3F6;
+    --gray-200: #ECEEF1;
+    --gray-500: #8E9195;
+
+    --color-link: var(--blue-100);
+    --color-visited-link: var(--blue-050);
+
+    --body-background: #FCFCFF;
+    --body-font-color: #1C1B1B;
+
+    --hint-color-info: #1E55CD;
+    --hint-color-warning: #E5BE65;
+    --hint-color-danger: #C8463A;
+
+    --header-color: #101C2B;
+    --green: #4EAC78;
+}
+
 header {
     background-color: #101C2B;
     height: $header-height;
@@ -306,34 +327,34 @@ h2.area-header{
 }
 
 .control-card.area-lifecycle.card-index-0 {
-    background-color: var(--red-300);
-    border-color: var(--red-400);
+    background-color: var(--orange-300);
+    border-color: var(--orange-400);
 }
 
 .control-card.area-lifecycle.card-index-1 {
-    background-color: var(--red-200);
-    border-color: var(--red-300);
+    background-color: var(--orange-200);
+    border-color: var(--orange-300);
 }
 
 .control-card.area-lifecycle.card-index-2 {
-    background-color: var(--red-100);
-    border-color: var(--red-200);
+    background-color: var(--orange-100);
+    border-color: var(--orange-200);
 }
 
 .control-card.area-lifecycle.card-index-3 {
-    background-color: var(--red-100);
-    border-color: var(--red-100);
+    background-color: var(--orange-100);
+    border-color: var(--orange-100);
 }
 
 .control-card.area-lifecycle.card-index-4 {
-    background-color: var(--red-400);
-    border-color: var(--red-400);
+    background-color: var(--orange-050);
+    border-color: var(--orange-100);
 }
 
 // The default color of the lifecycle card when no index is provided
 .control-card.area-lifecycle {
-    background-color: var(--red-400);
-    border-color: var(--red-300);
+    background-color: var(--orange-050);
+    border-color: var(--orange-100);
 }
 
 .markdown .risk-card {
