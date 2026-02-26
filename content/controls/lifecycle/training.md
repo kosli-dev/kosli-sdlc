@@ -3,6 +3,9 @@ weight: 30
 bookFlatSection: false
 title: "Training"
 control_code: SDLC-CTRL-0017
+level: 1
+tldr: All team members complete annual security awareness training covering the OWASP Top 10
+rationale: Security awareness reduces the likelihood of negligent or accidental insider threats and ensures every team member understands their responsibilities in the software development lifecycle
 areas:
  - lifecycle
 ---
