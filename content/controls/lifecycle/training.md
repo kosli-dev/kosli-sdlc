@@ -7,7 +7,8 @@ areas:
  - lifecycle
 ---
 
-# Training
+# {{% param "title" %}}
+{{< area_head >}}
 
 The team study the [OWASP top 10 security risks](https://owasp.org/www-project-top-ten/)
 and discuss their implications for our software development and operations, at least annually.  New employees and members of the tech team require this as part of our onboarding process.
