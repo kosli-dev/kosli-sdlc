@@ -136,8 +136,9 @@ body {
 }
 
 // Constrain content width for comfortable reading (~70-75 characters per line)
+// Card rows and risk rows are allowed to break out of this constraint
 .book-page .markdown {
-    max-width: 42rem;
+    max-width: 48rem;
 }
 
 .fw-700 {
@@ -228,11 +229,11 @@ ul.control-list {
 
 .markdown .control-card {
     display: block;
-    width: 110px;
-    height: 110px;
+    width: 140px;
+    height: 140px;
     border: 1px solid black;
     padding: 10px;
-    font-size: 12px;
+    font-size: 16px;
     color: #2a3040;
     font-weight: 600;
     overflow: hidden;
@@ -263,14 +264,15 @@ ul.control-list {
     flex-wrap: wrap;
     gap: 10px;
     padding-top: 10px;
-    max-width: 590px;
+    max-width: none;
 }
 
 .risk-card-row {
     display: grid;
-    grid-template-columns: repeat(5, 110px);
+    grid-template-columns: repeat(5, 140px);
     gap: 10px;
     padding-top: 10px;
+    max-width: none;
 }
 
 h2.area-header{
@@ -430,11 +432,11 @@ h2.area-header{
 
 .markdown .risk-card {
     display: block;
-    width: 110px;
-    height: 110px;
+    width: 140px;
+    height: 140px;
     border: 1px solid var(--red-300);
     padding: 10px;
-    font-size: 12px;
+    font-size: 16px;
     color: #2a3040 !important;
     font-weight: 600;
     background-color: var(--red-300);
