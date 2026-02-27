@@ -22,7 +22,7 @@ mitigations:
   - name: "Deployment Controls"
     url: "/controls/runtime/deployment_controls/"
   - name: "Training"
-    url: "/controls/training/"
+    url: "/controls/lifecycle/training/"
 ---
 
 # {{% param "title" %}}

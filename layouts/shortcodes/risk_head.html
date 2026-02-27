@@ -6,8 +6,22 @@
 </blockquote>
 
 <h3>Mapped Controls</h3>
-<ul>
-{{ range .Page.Params.mitigations }}
-  <li><a href="{{ .url }}">{{ .name }}</a></li>
+<div class="card-row">
+{{ range $index, $mitigation := .Page.Params.mitigations }}
+  {{ $page := $.Page.Site.GetPage $mitigation.url }}
+  {{ $area := "" }}
+  {{ with $page }}
+    {{ with .Params.areas }}
+      {{ $area = index . 0 }}
+    {{ end }}
+  {{ end }}
+  <a class="control-card area-{{ $area }} card-index-{{ $index }}" href="{{ $mitigation.url }}">
+    {{ with $page }}
+      {{ with .Params.control_code }}
+      <div class="control-code">{{ . }}:</div>
+      {{ end }}
+    {{ end }}
+    <div class="control-name">{{ $mitigation.name }}</div>
+  </a>
 {{ end }}
-</ul>
+</div>
