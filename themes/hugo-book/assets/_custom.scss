@@ -236,16 +236,18 @@ ul.control-list {
     color: #2a3040;
     font-weight: 600;
     overflow: hidden;
-    text-overflow: ellipsis;
-    // Use line-clamp to cut off after ~5 lines (fits within 110px - 20px padding)
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
     .control-code {
         font-size: 10px;
         font-weight: 400;
         opacity: 0.7;
         margin-bottom: 2px;
+    }
+    .control-name {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &:hover {
         opacity: 0.7;
