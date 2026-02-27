@@ -33,11 +33,18 @@ so rigor and process is essential.
 - We use a set of helper programs to update the secrets for the different servers. In addition to updating
   the secrets, the helper program also:
   - Tracks which server the secret was updated for.
-  - When and by who was the secret updated.
+  - When and by whom the secret was updated.
   - When does the secret expire.
 - We have a daily [GitHub job](https://github.com/kosli-dev/terraform-server/actions/workflows/secret-expire-check.yml)
   that checks if any secret will expire within the next month.
 - If a secret is going to expire soon a message is sent to our dedicated [slack channel](https://kosli-internal.slack.com/archives/C07P4AUQGHH)
+- Every 3 months we check if any new infrastructure secrets have been added. In the
+  [server repository](https://github.com/kosli-dev/server) there is a `bin/check_new_secrets.sh` script that will do the
+  check and tell you if any secrets has been added.
+- The evidence that we ran check for new secrets are recorded in the
+  [secrets-updated](https://app.kosli.com/kosli/flows/secrets-updated/trails/) flow.
+- We have a daily [GitHub job](https://github.com/kosli-dev/server/actions/workflows/check-new-secrets.yml)
+  that checks if it is more than three months since last time we checked for new secrets.
 
 ### CI workflow secrets
 
@@ -53,13 +60,3 @@ so rigor and process is essential.
   - any secret will expire within the next month
   - any new secrets have been added
 - If a secret is going to expire soon a message is sent to our dedicated [slack channel](https://kosli-internal.slack.com/archives/C07P4AUQGHH)
-
-### Check if new secrets has been added
-
-- Every 3 months we check if any new infrastructure secrets have been added. In the
-  [server repository](https://github.com/kosli-dev/server) there is a `bin/check_new_secrets.sh` script that will do the
-  check and tell you if any secrets has been added.
-- The evidence that we ran check for new secrets are recorded in the
-  [secrets-updated](https://app.kosli.com/kosli/flows/secrets-updated/trails/) flow.
-- We have a daily [GitHub job](https://github.com/kosli-dev/server/actions/workflows/check-new-secrets.yml)
-  that checks if it is more than three months since last time we checked for new secrets.
