@@ -9,7 +9,7 @@
     {{ with ($.Site.GetPage (printf "/%s" $taxonomy_name)) }}
       {{ range $index, $weightedArea := .Pages.ByWeight }}
 
-        <a href="/process/{{ .Page.Data.Term }}">
+        <a href="/controls/{{ with .Page.Params.section }}{{ . }}{{ else }}{{ .Page.Data.Term }}{{ end }}/">
           <h3 class="area-subheader area-{{ .Page.Data.Term }}">{{ .Page.LinkTitle }}</h3>
         </a>
 
