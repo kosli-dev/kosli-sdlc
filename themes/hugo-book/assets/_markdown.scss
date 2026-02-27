@@ -1,7 +1,8 @@
 @import "variables";
 
 .markdown {
-  line-height: 1.6;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 
   // remove padding at the beginning of page
   > :first-child {
@@ -15,9 +16,10 @@
   h5,
   h6 {
     font-weight: normal;
-    line-height: 1;
-    margin-top: 1.5em;
-    margin-bottom: $padding-16;
+    line-height: 1.2;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
 
     a.anchor {
       opacity: 0;
@@ -88,15 +90,20 @@
   }
 
   p {
-    word-wrap:break-word;
+    word-wrap: break-word;
+    margin-bottom: 1.25rem;
   }
 
   blockquote {
-    margin: $padding-16 0;
-    padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
+    margin: 1.5rem 0;
+    padding: $padding-8 $padding-16 $padding-8 1.25rem;
 
-    border-inline-start: $padding-4 solid var(--gray-200);
-    border-radius: $border-radius;
+    border-inline-start: 3px solid var(--gray-200);
+    border-radius: 0;
+
+    &:not(.book-hint) {
+      font-style: italic;
+    }
 
     :first-child {
       margin-top: 0;
@@ -111,13 +118,19 @@
     display: block;
     border-spacing: 0;
     border-collapse: collapse;
-    margin-top: $padding-16;
-    margin-bottom: $padding-16;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
 
     tr th,
     tr td {
       padding: $padding-8 $padding-16;
       border: $padding-1 solid var(--gray-200);
+    }
+
+    tr th {
+      font-weight: 600;
+      letter-spacing: 0.01em;
     }
 
     tr:nth-child(2n) {
@@ -134,6 +147,11 @@
   ul,
   ol {
     padding-inline-start: $padding-16 * 2;
+    margin-bottom: 1.25rem;
+
+    li + li {
+      margin-top: 0.35rem;
+    }
   }
 
   dl {
