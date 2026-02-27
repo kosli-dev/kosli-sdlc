@@ -439,7 +439,21 @@ h2.area-header{
     font-size: 16px;
     color: #2a3040 !important;
     font-weight: 600;
+    overflow: hidden;
     background-color: var(--red-300);
+    .risk-id {
+        font-size: 10px;
+        font-weight: 400;
+        opacity: 0.7;
+        margin-bottom: 2px;
+    }
+    .risk-name {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     &:hover {
         background-color: var(--blue-500) !important;
         border-color: var(--blue-500) !important;
