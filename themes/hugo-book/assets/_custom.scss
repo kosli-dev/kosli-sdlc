@@ -353,28 +353,28 @@ h2.area-header{
 }
 
 .control-card.area-lifecycle.card-index-0 {
-    background-color: var(--red-300);
-    border-color: var(--red-400);
+    background-color: var(--orange-300);
+    border-color: var(--orange-400);
 }
 
 .control-card.area-lifecycle.card-index-1 {
-    background-color: var(--red-200);
-    border-color: var(--red-300);
+    background-color: var(--orange-200);
+    border-color: var(--orange-300);
 }
 
 .control-card.area-lifecycle.card-index-2 {
-    background-color: var(--red-100);
-    border-color: var(--red-200);
+    background-color: var(--orange-100);
+    border-color: var(--orange-200);
 }
 
 .control-card.area-lifecycle.card-index-3 {
-    background-color: var(--red-100);
-    border-color: var(--red-100);
+    background-color: var(--orange-100);
+    border-color: var(--orange-100);
 }
 
 .control-card.area-lifecycle.card-index-4 {
-    background-color: var(--red-400);
-    border-color: var(--red-400);
+    background-color: var(--orange-050);
+    border-color: var(--orange-100);
 }
 
 // Row wrap: index 5 restarts at column 0
@@ -385,8 +385,8 @@ h2.area-header{
 
 // The default color of the lifecycle card when no index is provided
 .control-card.area-lifecycle {
-    background-color: var(--red-400);
-    border-color: var(--red-300);
+    background-color: var(--orange-050);
+    border-color: var(--orange-100);
 }
 
 .markdown .risk-card {
