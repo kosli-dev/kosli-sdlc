@@ -1,0 +1,63 @@
+<script>
+(function() {
+  var toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+
+  function getPreferredTheme() {
+    var saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+
+  // Apply on load (also done in head for flash prevention)
+  applyTheme(getPreferredTheme());
+
+  toggle.addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme') || 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('theme', next);
+  });
+
+  // Listen for system preference changes (only if user hasn't explicitly chosen)
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    if (!localStorage.getItem('theme')) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+
+  // Responsive card column coloring:
+  // Detect each card's visual column position and set data-visual-col
+  function updateCardColumns() {
+    document.querySelectorAll('.card-row, .risk-card-row').forEach(function(row) {
+      var cards = row.querySelectorAll('.control-card, .risk-card');
+      if (cards.length === 0) return;
+
+      var rowTop = null;
+      var col = 0;
+
+      cards.forEach(function(card) {
+        var top = card.getBoundingClientRect().top;
+        if (rowTop === null || Math.abs(top - rowTop) > 5) {
+          rowTop = top;
+          col = 0;
+        }
+        card.setAttribute('data-visual-col', col);
+        col++;
+      });
+    });
+  }
+
+  updateCardColumns();
+
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(updateCardColumns, 100);
+  });
+})();
+</script>

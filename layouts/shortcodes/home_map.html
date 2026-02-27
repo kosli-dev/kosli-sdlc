@@ -10,7 +10,7 @@
       {{ range $index, $weightedArea := .Pages.ByWeight }}
 
         <a href="/process/{{ .Page.Data.Term }}">
-          <h3 class="area-subheader">{{ .Page.LinkTitle }}</h3>
+          <h3 class="area-subheader area-{{ .Page.Data.Term }}">{{ .Page.LinkTitle }}</h3>
         </a>
 
         {{ $term := .Page.Data.Term }}

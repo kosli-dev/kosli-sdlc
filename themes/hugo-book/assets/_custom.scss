@@ -2,25 +2,33 @@
 
 // @import "plugins/numbered";
 
-// Kosli brand theme overrides (light)
-// These override the theme-light mixin values from _defaults.scss
+// Light-mode card color palette (overrides vivid _variables.scss defaults)
+// More saturated than pure pastels, but readable with dark text
+// Dark mode overrides these again in the [data-theme="dark"] block below
 :root {
-    --gray-100: #F2F3F6;
-    --gray-200: #ECEEF1;
-    --gray-500: #8E9195;
+    --green-050: #50b878;
+    --green-100: #6cc894;
+    --green-200: #8cd8b0;
+    --green-300: #b0e4c8;
+    --green-400: #d0eedc;
 
-    --color-link: var(--blue-100);
-    --color-visited-link: var(--blue-050);
+    --blue-050: #6898d8;
+    --blue-100: #84aee0;
+    --blue-200: #a0c4e8;
+    --blue-300: #bcd8f0;
+    --blue-400: #d4e8f6;
 
-    --body-background: #FCFCFF;
-    --body-font-color: #1C1B1B;
+    --yellow-050: #d0a830;
+    --yellow-100: #dab848;
+    --yellow-200: #e4c868;
+    --yellow-300: #ecd888;
+    --yellow-400: #f4e8b0;
 
-    --hint-color-info: #1E55CD;
-    --hint-color-warning: #E5BE65;
-    --hint-color-danger: #C8463A;
-
-    --header-color: #101C2B;
-    --green: #4EAC78;
+    --red-050: #d88898;
+    --red-100: #e0a0ae;
+    --red-200: #e8b4c0;
+    --red-300: #f0ccd4;
+    --red-400: #f6e0e4;
 }
 
 header {
@@ -53,7 +61,7 @@ header {
 }
 
 .book-menu a:hover {
-    color: var(--blue-100);
+    color: #2459D1;
     opacity: 1;
 }
 
@@ -74,14 +82,14 @@ header {
         a {
             color: var(--black-100);
             &:hover {
-                color: var(--blue-100);
+                color: #2459D1;
                 opacity: 1;
             }
         }
         &:hover {
-            -webkit-box-shadow: -3px 0 0 0 var(--blue-100);
-            -moz-box-shadow: -3px 0 0 0 var(--blue-100);
-            box-shadow: -3px 0 0 0 var(--blue-100);
+            -webkit-box-shadow: -3px 0 0 0 #2459D1;
+            -moz-box-shadow: -3px 0 0 0 #2459D1;
+            box-shadow: -3px 0 0 0 #2459D1;
         }
     }
 }
@@ -200,14 +208,14 @@ ul.control-list {
     border: 1px solid black;
     padding: 10px;
     font-size: 12px;
-    color: var(--neutral-100);
+    color: #2a3040;
     font-weight: 600;
     &:hover {
         opacity: 0.7;
         text-decoration: none;
     }
     &:visited {
-        color: var(--neutral-100);
+        color: #2a3040;
     }
 }
 
@@ -257,6 +265,12 @@ h2.area-header{
     border-color:  var(--green-100);
 }
 
+// Row wrap: index 5 restarts at column 0
+.control-card.area-build.card-index-5 {
+    background-color:  var(--green-300);
+    border-color:  var(--green-400);
+}
+
 // The default color of the build card when no index is provided
 .control-card.area-build {
     background-color:  var(--green-050);
@@ -286,6 +300,12 @@ h2.area-header{
 .control-card.area-process.card-index-4 {
     background-color:  var(--blue-050);
     border-color: var(--blue-100);
+}
+
+// Row wrap: index 5 restarts at column 0
+.control-card.area-process.card-index-5 {
+    background-color:  var(--blue-300);
+    border-color: var(--blue-400);
 }
 
 // The default color of the process card when no index is provided
@@ -320,6 +340,12 @@ h2.area-header{
     border-color: var(--yellow-100);
 }
 
+// Row wrap: index 5 restarts at column 0
+.control-card.area-change.card-index-5 {
+    background-color:  var(--yellow-300);
+    border-color: var(--yellow-400);
+}
+
 // The default color of the change card when no index is provided
 .control-card.area-change {
     background-color:  var(--yellow-050);
@@ -351,6 +377,12 @@ h2.area-header{
     border-color: var(--orange-100);
 }
 
+// Row wrap: index 5 restarts at column 0
+.control-card.area-lifecycle.card-index-5 {
+    background-color: var(--red-300);
+    border-color: var(--red-400);
+}
+
 // The default color of the lifecycle card when no index is provided
 .control-card.area-lifecycle {
     background-color: var(--orange-050);
@@ -364,7 +396,7 @@ h2.area-header{
     border: 1px solid var(--red-300);
     padding: 10px;
     font-size: 12px;
-    color: var(--neutral-100) !important;
+    color: #2a3040 !important;
     font-weight: 600;
     background-color: var(--red-300);
     &:hover {
@@ -372,10 +404,10 @@ h2.area-header{
         border-color: var(--blue-500) !important;
         opacity: 1;
         text-decoration: none;
-        color: var(--neutral-100) !important;
+        color: #ffffff !important;
     }
     &:visited {
-        color: var(--neutral-100) !important;
+        color: #2a3040 !important;
     }
 }
 
@@ -389,9 +421,42 @@ h2.area-header{
 .risk-card.card-index-7 { background-color: var(--red-200); border-color: var(--red-200); }
 .risk-card.card-index-8 { background-color: var(--red-100); border-color: var(--red-100); }
 
+// Responsive column-based card colors (overrides static card-index)
+// JS sets data-visual-col based on actual column position after flex wrap
+.markdown .control-card.area-build[data-visual-col="0"] { background-color: var(--green-300); border-color: var(--green-400); }
+.markdown .control-card.area-build[data-visual-col="1"] { background-color: var(--green-200); border-color: var(--green-300); }
+.markdown .control-card.area-build[data-visual-col="2"] { background-color: var(--green-100); border-color: var(--green-200); }
+.markdown .control-card.area-build[data-visual-col="3"] { background-color: var(--green-100); border-color: var(--green-100); }
+.markdown .control-card.area-build[data-visual-col="4"] { background-color: var(--green-050); border-color: var(--green-100); }
+
+.markdown .control-card.area-process[data-visual-col="0"] { background-color: var(--blue-300); border-color: var(--blue-400); }
+.markdown .control-card.area-process[data-visual-col="1"] { background-color: var(--blue-200); border-color: var(--blue-300); }
+.markdown .control-card.area-process[data-visual-col="2"] { background-color: var(--blue-100); border-color: var(--blue-200); }
+.markdown .control-card.area-process[data-visual-col="3"] { background-color: var(--blue-100); border-color: var(--blue-100); }
+.markdown .control-card.area-process[data-visual-col="4"] { background-color: var(--blue-050); border-color: var(--blue-100); }
+
+.markdown .control-card.area-change[data-visual-col="0"] { background-color: var(--yellow-300); border-color: var(--yellow-400); }
+.markdown .control-card.area-change[data-visual-col="1"] { background-color: var(--yellow-200); border-color: var(--yellow-300); }
+.markdown .control-card.area-change[data-visual-col="2"] { background-color: var(--yellow-100); border-color: var(--yellow-200); }
+.markdown .control-card.area-change[data-visual-col="3"] { background-color: var(--yellow-100); border-color: var(--yellow-100); }
+.markdown .control-card.area-change[data-visual-col="4"] { background-color: var(--yellow-050); border-color: var(--yellow-100); }
+
+.markdown .control-card.area-lifecycle[data-visual-col="0"] { background-color: var(--red-300); border-color: var(--red-400); }
+.markdown .control-card.area-lifecycle[data-visual-col="1"] { background-color: var(--red-200); border-color: var(--red-300); }
+.markdown .control-card.area-lifecycle[data-visual-col="2"] { background-color: var(--red-100); border-color: var(--red-200); }
+.markdown .control-card.area-lifecycle[data-visual-col="3"] { background-color: var(--red-100); border-color: var(--red-100); }
+.markdown .control-card.area-lifecycle[data-visual-col="4"] { background-color: var(--red-050); border-color: var(--red-100); }
+
+.markdown .risk-card[data-visual-col="0"] { background-color: var(--red-400); border-color: var(--red-400); }
+.markdown .risk-card[data-visual-col="1"] { background-color: var(--red-300); border-color: var(--red-300); }
+.markdown .risk-card[data-visual-col="2"] { background-color: var(--red-200); border-color: var(--red-200); }
+.markdown .risk-card[data-visual-col="3"] { background-color: var(--red-100); border-color: var(--red-100); }
+.markdown .risk-card[data-visual-col="4"] { background-color: var(--red-050); border-color: var(--red-050); }
+
 div.control-card:hover {
     background-color: var(--blue-500) !important;
     border-color: var(--blue-500) !important;
+    color: #ffffff !important;
     text-decoration: none;
 }
 
@@ -407,10 +472,159 @@ div.control-card:hover {
     margin-bottom: 0;
     margin-top: 1em;
     color: var(--body-font-color);
+
+    &.area-build { color: #0a8a50; }
+    &.area-process { color: #2459D1; }
+    &.area-change { color: #b89000; }
+    &.area-lifecycle { color: #c0405a; }
 }
 
 @media (max-width: 900px) {
     .home-layout {
         grid-template-columns: 1fr;
+    }
+}
+
+// Hide the mobile "Introduction" header bar
+.book-header {
+    display: none !important;
+}
+
+// Dark mode toggle button
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: $border-radius;
+    color: white;
+    cursor: pointer;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s;
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .icon-moon {
+        display: none;
+    }
+}
+
+[data-theme="dark"] .theme-toggle {
+    .icon-sun {
+        display: none;
+    }
+    .icon-moon {
+        display: block;
+    }
+}
+
+// Dark mode theme
+[data-theme="dark"] {
+    // Base theme variables
+    --gray-100: rgba(255, 255, 255, 0.1);
+    --gray-200: rgba(255, 255, 255, 0.2);
+    --gray-500: rgba(255, 255, 255, 0.5);
+
+    --color-link: #84b2ff;
+    --color-visited-link: #b88dff;
+
+    --body-background: #1a1f25;
+    --body-font-color: #d8dade;
+
+    --icon-filter: brightness(0) invert(1);
+
+    --hint-color-info: #6bf;
+    --hint-color-warning: #fd6;
+    --hint-color-danger: #f66;
+
+    --header-color: #000E41;
+    --green: #1a8a5c;
+
+    // Desaturated, darkened color palette for cards
+    // Gradient: 300 = most muted (card-index-0) → 050 = most vivid (card-index-4)
+    --green-050: #0a8058;
+    --green-100: #106848;
+    --green-200: #155038;
+    --green-300: #1a3828;
+    --green-400: #142a1e;
+    --green-500: #001a12;
+
+    --blue-050: #0a68a8;
+    --blue-100: #105088;
+    --blue-200: #153a68;
+    --blue-300: #1a2845;
+    --blue-400: #141e38;
+    --blue-500: #0a1a40;
+
+    --yellow-050: #987a10;
+    --yellow-100: #786015;
+    --yellow-200: #584818;
+    --yellow-300: #38301a;
+    --yellow-400: #2a2010;
+    --yellow-500: #1a1400;
+
+    --red-050: #983040;
+    --red-100: #782838;
+    --red-200: #582030;
+    --red-300: #381820;
+    --red-400: #2a1018;
+    --red-500: #1a0808;
+
+    // Override neutral/black palette for dark context
+    --neutral-200: #21272e;
+    --neutral-300: #3a3f47;
+    --neutral-400: #4a4f57;
+    --neutral-500: #8a8f97;
+    --black-100: #d8dade;
+    --black-200: #a0a4a8;
+    --black-300: #6a6e72;
+    --black-400: #3a3f47;
+    --black-500: #21272e;
+
+    // Control card text stays white in dark mode
+    .markdown .control-card,
+    .markdown .control-card:visited,
+    .markdown .risk-card,
+    .markdown .risk-card:visited {
+        color: #ffffff !important;
+    }
+
+    // Search input
+    .book-search input {
+        border-color: var(--neutral-400);
+        background: var(--gray-200);
+    }
+
+    // Footer logo - invert for dark bg
+    .book-footer .footer-logo {
+        filter: brightness(0) invert(1);
+    }
+
+    // Markdown table rows
+    .markdown table tr:nth-child(2n) {
+        background: var(--gray-100);
+    }
+
+    // Code blocks
+    .markdown code {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .markdown pre {
+        background: #0d1117;
+    }
+
+    // Hint boxes (info, warning, danger)
+    .book-hint {
+        color: #d8dade;
     }
 }
