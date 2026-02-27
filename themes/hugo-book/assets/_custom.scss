@@ -235,6 +235,12 @@ ul.control-list {
     font-size: 12px;
     color: #2a3040;
     font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // Use line-clamp to cut off after ~5 lines (fits within 110px - 20px padding)
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
     &:hover {
         opacity: 0.7;
         text-decoration: none;
