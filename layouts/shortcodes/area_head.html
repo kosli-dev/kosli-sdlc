@@ -9,38 +9,37 @@
 </blockquote>
 
 {{/* Reverse-lookup: find which risks this control mitigates.
-     Each risk page in /risk_register/ has a "mitigations" list in its
+     Each risk page in /risks/ has a "mitigations" list in its
      front matter with url/name pairs pointing to control pages.
      We check each risk's mitigations to see if any url matches
      the current control page's permalink. */}}
 {{ $currentURL := .Page.RelPermalink }}
 
-{{/* Get all child pages of the risk_register section */}}
-{{ $risks := (site.GetPage "/risk_register").Pages }}
+{{/* Get all child pages of the risks section */}}
+{{ $risks := (.Page.Site.GetPage "/risks").Pages }}
 
-{{/* Build a list of matching risks by scanning each risk's mitigations */}}
+{{/* Build a list of matching risk pages by scanning each risk's mitigations */}}
 {{ $matched := slice }}
 {{ range $risks }}
-  {{/* Capture risk page title and URL before entering the inner range,
-       because $ inside a shortcode's nested range refers to the shortcode
-       context, not the current page in the outer range */}}
-  {{ $riskTitle := .Title }}
-  {{ $riskURL := .RelPermalink }}
+  {{ $riskPage := . }}
   {{ range .Params.mitigations }}
-    {{/* If this mitigation's url points to the current control page,
-         add the risk to the matched list */}}
     {{ if eq .url $currentURL }}
-      {{ $matched = $matched | append (dict "name" $riskTitle "url" $riskURL) }}
+      {{ $matched = $matched | append $riskPage }}
     {{ end }}
   {{ end }}
 {{ end }}
 
 {{/* Only render the section if at least one risk references this control */}}
 {{ if $matched }}
-<h3>Mitigated Risks</h3>
-<ul>
-{{ range $matched }}
-  <li><a href="{{ .url }}">{{ .name }}</a></li>
+<h3>Mitigates Risk</h3>
+<div class="card-row">
+{{ range $index, $risk := $matched }}
+  <a class="risk-card card-index-{{ $index }}" href="{{ $risk.RelPermalink }}">
+    {{ with $risk.Params.risk_id }}
+    <div class="risk-id">{{ . }}:</div>
+    {{ end }}
+    <div class="risk-name">{{ $risk.LinkTitle }}</div>
+  </a>
 {{ end }}
-</ul>
+</div>
 {{ end }}
