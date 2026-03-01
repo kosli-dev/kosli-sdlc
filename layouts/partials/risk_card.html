@@ -1,0 +1,6 @@
+<a class="risk-card card-index-{{ .index }}" href="{{ .page.RelPermalink }}">
+  {{ with .page.Params.risk_id }}
+  <div class="risk-id">{{ . }}:</div>
+  {{ end }}
+  <div class="risk-name">{{ .page.LinkTitle }}</div>
+</a>

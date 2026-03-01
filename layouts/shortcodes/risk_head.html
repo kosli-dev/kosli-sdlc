@@ -14,14 +14,7 @@
     {{ with .Params.areas }}
       {{ $area = index . 0 }}
     {{ end }}
+    {{ partial "control_card.html" (dict "page" $page "area" $area "index" $index) }}
   {{ end }}
-  <a class="control-card area-{{ $area }} card-index-{{ $index }}" href="{{ $mitigation.url }}">
-    {{ with $page }}
-      {{ with .Params.control_code }}
-      <div class="control-code">{{ . }}:</div>
-      {{ end }}
-    {{ end }}
-    <div class="control-name">{{ $mitigation.name }}</div>
-  </a>
 {{ end }}
 </div>
