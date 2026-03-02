@@ -4,42 +4,53 @@ bookCollapseSection: true
 weight: 5
 title: Background
 ---
-{{< figure src="/images/hero-home.svg" alt="Devops Control Framework">}}
-# Kosli's Software Delivery Lifecycle
+{{< figure src="/images/hero-home.svg" alt="Software Delivery Governance">}}
+# Software Delivery Governance
 
-{{< columns >}}
-{{< figure src="/images/devops-values.svg" alt="DevOps Values" >}}
-## DevOps Values
+Software delivery performance directly correlates with business performance. But
+for organizations in regulated markets, the biggest blocker to delivery isn't
+engineering capacity — it's **governance**.
 
-This is a defined secure software development process
-with **DevOps Culture** at it's heart.
+Legacy governance processes slow businesses down, cost them money, and put them
+at risk. Modern tools and engineering practices have made it possible to ship
+software at extraordinary speed, but governance has remained static. Most
+enterprises still rely on IT tickets, human approvers, and Change Advisory Board
+meetings — governance processes designed for a world where teams deployed
+monthly, not hourly.
 
-<--->
-{{< figure src="/images/continuous-compliance.svg" alt="Continuous Compliance" >}}
-## Continuous Compliance
+## The Three Pillars of Software Governance
 
-This is the distillation of the real processes in use by leading regulated
-institutions to deliver **compliant, secure, and audit-ready software**.
-
-{{< /columns >}}
-
-
-
-## Overview
-
-The purpose of this Secure Software Development Lifecycle (SSDLC) is to provide a
-defined, repeatable way of working that manages Kosli's risks associated with
-software development.  It is a governance framework which forms a _definition_
-of how things should be done, which should be adhered to in _implementation_,
-which produces _proof_ of conformance.
+Effective governance, whether manual or automated, must address three fundamental
+pillars:
 
 {{< figure src="/images/governance.svg" alt="Governance Framework" >}}
 
+**1. Define: Have a Process for Managing Risks**
+
+Every governance framework starts with documented, standardized processes that
+explicitly address risks in software development and delivery. This typically
+takes the form of an SDLC Governance Framework that identifies potential risks
+and prescribes specific controls to mitigate them. Without clear definitions,
+controls become subject to interpretation, making consistent implementation
+impossible.
+
+**2. Implement: Follow the Process in Daily Work**
+
+A framework documented on paper is meaningless unless consistently executed in
+practice. This pillar focuses on embedding governance activities into the daily
+workflow of development teams. When controls are automated they're followed every
+time, not only when someone remembers.
+
+**3. Prove: Demonstrate the Process Has Been Followed**
+
+The final pillar involves demonstrating compliance through verifiable evidence.
+Auditors and regulators need proof that controls are actually performed, not just
+policies stating they should be.
+
 ## Scope
 
-The scope of this framework is to secure the entire value stream of our software
-development.
+The scope of this framework covers the entire software development value stream —
+from requirements through build, release, and runtime.
+
 {{< figure src="/images/governance-scope.svg" alt="Secure Value Stream" >}}
-
-
 
