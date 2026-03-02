@@ -7,11 +7,6 @@
 {{ end }}
 <div class="card-row">
   {{ range $index, $page := $section.Pages.ByWeight }}
-    <a class="control-card area-{{ $area }} card-index-{{ $index }}" href="{{ $page.RelPermalink }}">
-      {{ with $page.Params.control_code }}
-      <div class="control-code">{{ . }}:</div>
-      {{ end }}
-      <div class="control-name">{{ $page.LinkTitle }}</div>
-    </a>
+    {{ partial "control_card.html" (dict "page" $page "area" $area "index" $index) }}
   {{ end }}
 </div>

@@ -34,12 +34,7 @@
 <h3>Mitigates Risk</h3>
 <div class="card-row">
 {{ range $index, $risk := $matched }}
-  <a class="risk-card card-index-{{ $index }}" href="{{ $risk.RelPermalink }}">
-    {{ with $risk.Params.risk_id }}
-    <div class="risk-id">{{ . }}:</div>
-    {{ end }}
-    <div class="risk-name">{{ $risk.LinkTitle }}</div>
-  </a>
+  {{ partial "risk_card.html" (dict "page" $risk "index" $index) }}
 {{ end }}
 </div>
 {{ end }}
