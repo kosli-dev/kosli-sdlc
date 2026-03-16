@@ -7,3 +7,21 @@
 
 - id: workload_monitoring
   path: "runtime/workload_monitoring"
+
+- id: drift_detection
+  path: "runtime/drift_detection"
+
+- id: penetration_testing
+  path: "lifecycle/penetration_testing"
+
+- id: vulnerability_scanning_sast
+  path: "process/vulnerability_scanning_sast"
+
+- id: vulnerability_scanning_sca
+  path: "process/vulnerability_scanning_sca"
+
+- id: vulnerability_scanning_containers
+  path: "process/vulnerability_scanning_containers"
+
+- id: service_ownership
+  path: "lifecycle/service_ownership"
