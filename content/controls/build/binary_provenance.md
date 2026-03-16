@@ -1,5 +1,6 @@
 ---
 title: Artifact Binary Provenance
+summary: "Every software artefact running in a production system has known provenance, established through cryptographic content-addressable identities."
 weight: 20
 control_code: SDLC-CTRL-0002
 level: 1
@@ -20,6 +21,13 @@ nist-sp-800-53r5_references:
     note: Non-repudiation — content-addressable identities provide tamper-evident proof of what was built and deployed.
   - id: cm-3
     note: Change tracking — provenance records tie each artefact to the specific commit and build that produced it.
+soc2-type2_references:
+  - id: pi1.3
+    note: Requires processing to be complete, accurate, and timely; binary provenance verifies that deployed artifacts match what was built and tested.
+  - id: cc8.1
+    note: Requires authorised and tested changes; provenance attestations confirm that artifacts originate from the controlled build pipeline.
+  - id: cc7.2
+    note: Requires monitoring for anomalies; provenance verification detects tampered or substituted artifacts before deployment.
 mitigates:
   - supply_chain_compromise
   - unauthorised_deployment
@@ -30,9 +38,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-Every software artefact running in a production system has known provenance, established through cryptographic content-addressable identities.
 
 ## Description
 Software identity is defined using the cryptographic hash of the software itself. Using the SHA256 digest of a software binary means that if a single byte in the software changes, it will have a different identity. This ensures that one software artefact cannot be qualified and a different one deployed in its place.
@@ -59,6 +64,8 @@ Human-friendly identifiers such as semantic versions or git commit references ar
 We use Kosli to record every official build in our CI system. The audit trails for our binary provenance can be found here: https://app.kosli.com/kosli/flows/
 
 {{< figure src="/images/binary-provenance.svg" alt="Binary Provenance" >}}
+
+{{< compliance_refs >}}
 
 ## Links
 - [SLSA Provenance](https://slsa.dev/provenance)

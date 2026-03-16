@@ -1,5 +1,6 @@
 ---
 title: Drift Detection
+summary: "Infrastructure and configuration are continuously monitored for drift from the approved baseline defined as code, detecting unauthorised or unintended changes."
 weight: 60
 control_code: SDLC-CTRL-0018
 level: 1
@@ -20,6 +21,13 @@ nist-sp-800-53r5_references:
     note: Continuous monitoring — drift detection is a key component of the continuous compliance monitoring strategy.
   - id: si-7
     note: Software and information integrity — detects tampering or unintended modifications to infrastructure and configuration.
+soc2-type2_references:
+  - id: cc7.2
+    note: Requires monitoring for anomalies indicative of security events; drift detection identifies unexpected changes to running environments.
+  - id: cc7.3
+    note: Requires evaluation of detected anomalies; drift detection alerts enable investigation of whether changes are authorised.
+  - id: cc8.1
+    note: Requires only authorised changes in production; drift detection identifies when the running state diverges from the approved configuration.
 mitigates:
   - configuration_drift
   - insider_threat
@@ -31,9 +39,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-Infrastructure and configuration are continuously monitored for drift from the approved baseline defined as code, detecting unauthorised or unintended changes.
 
 ## Description
 Even when infrastructure is defined as code and applied through automation, configuration drift can occur through manual interventions, failed deployments, or external changes. Drift detection continuously compares the actual state of infrastructure and configuration against the approved baseline, identifying deviations that may indicate unauthorised access, operational errors, or compliance violations.
@@ -52,6 +57,8 @@ Drift detection complements the preventative control of defining infrastructure 
 * We use Kosli environment monitoring to detect drift in our runtime environments
 * Drift alerts are delivered to our Slack channels for immediate review
 * Detected drift is investigated and resolved by either updating the infrastructure code or reverting the change
+
+{{< compliance_refs >}}
 
 ## Links
 - [Kosli — Environment Monitoring](https://docs.kosli.com/getting_started/environments/)

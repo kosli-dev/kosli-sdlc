@@ -1,5 +1,6 @@
 ---
 title: Code Review
+summary: "Code review is performed on all software changes prior to production deployment, providing peer verification of security, quality, and correctness."
 weight: 10
 control_code: SDLC-CTRL-0007
 level: 1
@@ -18,6 +19,11 @@ nist-sp-800-53r5_references:
     note: Software and information integrity — peer review helps detect malicious or erroneous changes to code.
   - id: ac-5
     note: Separation of duties — the reviewer must be a different person from the author of the change.
+soc2-type2_references:
+  - id: cc8.1
+    note: Requires changes to be authorised before implementation; code review provides the peer approval mechanism for all source code changes.
+  - id: cc2.1
+    note: Requires relevant quality information to be communicated; code review is the primary mechanism for knowledge sharing and defect identification during development.
 mitigates:
   - insider_threat
   - vulnerable_software_in_production
@@ -28,9 +34,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-Code review is performed on all software changes prior to production deployment, providing peer verification of security, quality, and correctness.
 
 ## Description
 Peer review is an essential mitigation against insider threats, as well as a means of improving knowledge sharing and software quality. At a minimum, code reviews are performed by someone capable of understanding the change and its associated risks.
@@ -62,6 +65,8 @@ Note: the reviewer should not be the person who pushes the last commit on the br
 * We use pull requests to document reviews in GitHub
 * We protect the `main` branch in each repository
 * We record the pull requests in Kosli and control/monitor that no runtime workload is missing PR attestations
+
+{{< compliance_refs >}}
 
 ## Links
 - [About pull request reviews — GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)

@@ -1,5 +1,6 @@
 ---
 title: Change Records
+summary: "All systems and services maintain a permanent record of changes, providing a forensic history of all deployments to production."
 weight: 10
 control_code: SDLC-CTRL-0012
 level: 1
@@ -18,6 +19,13 @@ nist-sp-800-53r5_references:
     note: Audit record generation — the system must automatically generate change records for all deployments.
   - id: si-12
     note: Information management and retention — change records must be retained in accordance with applicable policies.
+soc2-type2_references:
+  - id: cc8.1
+    note: Requires a record of all changes to production; change records provide the audit trail of what was deployed, when, and by whom.
+  - id: cc7.2
+    note: Requires monitoring of system components for anomalies; change records enable detection of unauthorised or unexpected deployments.
+  - id: cc4.1
+    note: Requires monitoring activities to ascertain whether controls are functioning; change records provide evidence for control effectiveness reviews.
 mitigates:
   - insider_threat
   - unauthorised_deployment
@@ -29,9 +37,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-All systems and services maintain a permanent record of changes, providing a forensic history of all deployments to production.
 
 ## Description
 Change records provide the audit trail required to meet change management obligations. By automatically logging all deployments and changes to production systems, the organisation maintains a permanent, tamper-evident record of what was deployed, when, and by whom.
@@ -51,6 +56,8 @@ This forensic history supports incident investigation, compliance reporting, and
 
 * We monitor production systems and automatically record a forensic history of all changes in Kosli using [environment monitoring](https://docs.kosli.com/getting_started/environments/)
     * Environment records can be found here: https://app.kosli.com/kosli/environments/
+
+{{< compliance_refs >}}
 
 ## Links
 - [Kosli — Environments](https://docs.kosli.com/getting_started/environments/)

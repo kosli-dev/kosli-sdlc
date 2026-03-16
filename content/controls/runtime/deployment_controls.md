@@ -1,5 +1,6 @@
 ---
 title: Deployment Controls
+summary: "Deployment controls are enforced in the pipeline and at runtime to ensure only compliant, approved software is deployed to production."
 weight: 20
 control_code: SDLC-CTRL-0013
 level: 1
@@ -18,6 +19,11 @@ nist-sp-800-53r5_references:
     note: Software and information integrity — deployment controls verify artefact integrity before allowing deployment.
   - id: ca-7
     note: Continuous monitoring — runtime compliance monitoring alerts on non-compliant workloads.
+soc2-type2_references:
+  - id: cc8.1
+    note: Requires controlled migration of changes to production; deployment controls enforce that only compliant artifacts are deployed.
+  - id: cc6.1
+    note: Requires logical access controls; deployment controls restrict who and what can deploy to production environments.
 mitigates:
   - unauthorised_deployment
   - supply_chain_compromise
@@ -29,9 +35,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-Deployment controls are enforced in the pipeline and at runtime to ensure only compliant, approved software is deployed to production.
 
 ## Description
 Deployment controls automatically ensure that only software which has gone through the complete Software Development Lifecycle reaches production. This can be implemented as a gate in the CI/CD pipeline, as an admission controller in the runtime environment, or ideally both.
@@ -50,6 +53,8 @@ Pipeline gates verify that all required attestations (tests, reviews, scans, app
 
 * We use [Kosli's assert artifact command](https://docs.kosli.com/client_reference/kosli_assert_artifact/) prior to deployment
 * We use [Kosli's environment monitoring]({{< ref "workload_monitoring.md" >}}) to alert on non-compliant workloads
+
+{{< compliance_refs >}}
 
 ## Links
 - [Kosli — Assert Artifact](https://docs.kosli.com/client_reference/kosli_assert_artifact/)

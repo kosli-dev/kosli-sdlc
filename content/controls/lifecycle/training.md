@@ -1,5 +1,6 @@
 ---
 title: Training
+summary: "All team members complete annual security awareness training covering the OWASP Top 10, ensuring a security-conscious development workforce."
 weight: 30
 control_code: SDLC-CTRL-0017
 level: 1
@@ -16,6 +17,11 @@ nist-sp-800-53r5_references:
     note: Training records — requires documentation and retention of training completion.
   - id: pm-13
     note: Security and privacy workforce — requires maintaining a security-aware development workforce.
+soc2-type2_references:
+  - id: cc1.4
+    note: Requires the entity to attract, develop, and retain competent individuals; training ensures personnel have the skills to fulfil their security responsibilities.
+  - id: cc2.2
+    note: Requires communication of responsibilities to internal personnel; security awareness training ensures staff understand their role in maintaining controls.
 mitigates:
   - insider_threat
   - vulnerable_software_in_production
@@ -26,9 +32,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-All team members complete annual security awareness training covering the OWASP Top 10, ensuring a security-conscious development workforce.
 
 ## Description
 Security awareness reduces the likelihood of negligent or accidental insider threats and ensures every team member understands their responsibilities in the software development lifecycle. Training covers the most common security risks and their implications for software development and operations.
@@ -46,6 +49,8 @@ New employees and members of the tech team receive this training as part of the 
 * The team study the [OWASP Top 10 security risks](https://owasp.org/www-project-top-ten/) and discuss their implications for our software development and operations, at least annually.
 * The activity and participants are logged in a Kosli audit trail.
 * For new employees the OWASP Top 10 is done together with one of the other team members.
+
+{{< compliance_refs >}}
 
 ## Links
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)

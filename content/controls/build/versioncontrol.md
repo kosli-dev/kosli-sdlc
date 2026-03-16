@@ -1,5 +1,6 @@
 ---
 title: Version Control
+summary: "Software and configuration are stored in an approved version control system, providing traceability of all changes across all releases."
 weight: 10
 control_code: SDLC-CTRL-0001
 level: 1
@@ -28,6 +29,13 @@ nist-sp-800-53r5_references:
     note: Requires access controls to be consistently enforced; maps to branch protection rules and repository permission models.
   - id: ia-5
     note: Covers management of credentials used to authenticate to the version control system, including SSH keys and tokens used for commit signing.
+soc2-type2_references:
+  - id: cc8.1
+    note: Requires formal change management processes; version control provides the audit trail of all source code and configuration changes.
+  - id: cc6.1
+    note: Requires logical access controls to information assets; maps to repository permissions and branch protection rules.
+  - id: cc6.3
+    note: Requires role-based access controls; maps to committer access provisioning and review for the version control system.
 mitigates:
   - insider_threat
   - audit_and_compliance_failure
@@ -37,9 +45,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-Software and configuration are stored in an approved version control system, providing traceability of all changes across all releases.
 
 ## Description
 Version control is required to maintain a history of all software and configuration changes across all releases. It provides traceability of who made changes and when, establishing the provenance of software over time.
@@ -103,6 +108,8 @@ To ensure compliance to the code review process, we protect the branch we deploy
 * Merges require at least one approval (two if the strategy is Production Deployment Branch)
 * Builds and tests run successfully
 * No unresolved merge checks
+
+{{< compliance_refs >}}
 
 ## Links
 - [About commit signature verification — GitHub](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)

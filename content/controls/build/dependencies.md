@@ -1,5 +1,6 @@
 ---
 title: Dependency Management
+summary: "Every dependency is defined securely, managed, and auditable as part of the software development lifecycle."
 weight: 40
 control_code: SDLC-CTRL-0004
 level: 1
@@ -20,6 +21,13 @@ nist-sp-800-53r5_references:
     note: Provenance — requires tracking the origin and integrity of software components.
   - id: cm-7
     note: Least functionality — only necessary dependencies should be included.
+soc2-type2_references:
+  - id: cc8.1
+    note: Requires changes to be authorised and tested; dependency management ensures third-party components are explicitly declared and reviewed.
+  - id: pi1.3
+    note: Requires processing integrity; pinned and verified dependencies prevent unexpected behaviour from upstream changes.
+  - id: cc7.2
+    note: Requires monitoring of system components; maps to tracking dependency versions and known vulnerabilities.
 mitigates:
   - supply_chain_compromise
   - vulnerable_software_in_production
@@ -29,9 +37,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-Every dependency is defined securely, managed, and auditable as part of the software development lifecycle.
 
 ## Description
 Inputs to the build process — including third-party libraries, container base images, and other source code — can introduce security and quality issues. Dependencies must be explicitly defined, controlled, and transparent to maintain the integrity of the software supply chain.
@@ -56,6 +61,8 @@ We define these dependencies in the source code, at the application level and if
 | Slack Application | [Python Dependencies](https://github.com/kosli-dev/slack-auth-app/blob/main/src/requirements.txt) <br/> [Docker Dependencies](https://github.com/kosli-dev/slack-auth-app/blob/main/Dockerfile) |
 
 {{< figure src="/images/dependency-management.svg" alt="Dependency Management" >}}
+
+{{< compliance_refs >}}
 
 ## Links
 - [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/)

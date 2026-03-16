@@ -1,5 +1,6 @@
 ---
 title: Secrets Scanning
+summary: "Source code, built binaries, and configuration files are scanned for secrets at multiple stages of the development lifecycle to prevent credential exposure."
 weight: 60
 control_code: SDLC-CTRL-0006
 level: 1
@@ -18,6 +19,13 @@ nist-sp-800-53r5_references:
     note: Software and information integrity — detects embedded secrets that could compromise the integrity of the software supply chain.
   - id: cm-6
     note: Configuration settings — secrets scanning validates that configuration files do not contain hardcoded credentials.
+soc2-type2_references:
+  - id: cc6.1
+    note: Requires protection of credentials and access mechanisms; secrets scanning detects leaked credentials before they can be exploited.
+  - id: cc6.7
+    note: Requires restriction of access credentials to authorised individuals; scanning prevents accidental exposure of secrets in source code.
+  - id: cc7.2
+    note: Requires monitoring for vulnerabilities; secrets scanning identifies credential exposure as a security vulnerability.
 mitigates:
   - credential_and_secret_exposure
   - insider_threat
@@ -27,9 +35,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-Source code, built binaries, and configuration files are scanned for secrets at multiple stages of the development lifecycle to prevent credential exposure.
 
 ## Description
 Secrets — such as API keys, passwords, tokens, and certificates — must never be hardcoded in source code, configuration files, container images, or Infrastructure as Code. Hardcoded secrets in source code or built artefacts pose a significant security risk, potentially enabling unauthorised access and data breaches.
@@ -69,6 +74,8 @@ When secrets are detected:
 2. **History cleanup** — if secrets entered version control, we use secure rewrite tools to remove them from git history
 3. **Root cause analysis** — investigate how the secret bypassed controls
 4. **Control enhancement** — update scanning rules and processes to prevent recurrence
+
+{{< compliance_refs >}}
 
 ## Links
 - [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html)

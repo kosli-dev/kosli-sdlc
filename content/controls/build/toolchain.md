@@ -1,5 +1,6 @@
 ---
 title: Controlled Build Environment
+summary: "Build environments are defined as code, ephemeral, and auditable, providing resilience against supply chain attacks."
 weight: 30
 control_code: SDLC-CTRL-0003
 level: 3
@@ -20,6 +21,13 @@ nist-sp-800-53r5_references:
     note: Configuration settings — build environment configuration must be defined as code and version-controlled.
   - id: si-7
     note: Software and information integrity — immutable build containers prevent tampering during the build process.
+soc2-type2_references:
+  - id: cc8.1
+    note: Requires controlled change management infrastructure; a controlled build environment ensures reproducible, auditable builds.
+  - id: cc6.1
+    note: Requires logical access controls; maps to restricting who can modify build pipelines and CI/CD configuration.
+  - id: cc7.1
+    note: Requires detection of anomalous activity; controlled build environments limit the blast radius of compromised components.
 mitigates:
   - supply_chain_compromise
 related_mitigations:
@@ -28,9 +36,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-Build environments are defined as code, ephemeral, and auditable, providing resilience against supply chain attacks.
 
 ## Description
 Builds that are scripted and executed in ephemeral, controlled build environments are more resilient against software supply chain attacks. Defining build environments as code protects against interference that can occur during the build and distribution processes.
@@ -55,6 +60,8 @@ Using immutable container images to define the build environment enables auditin
 {{< hint info >}}
 You can learn more about build security levels defined in the [SLSA specification](https://slsa.dev/spec/v0.1/requirements#scripted-build).
 {{< /hint >}}
+
+{{< compliance_refs >}}
 
 ## Links
 - [SLSA Build Requirements](https://slsa.dev/spec/v0.1/requirements#scripted-build)

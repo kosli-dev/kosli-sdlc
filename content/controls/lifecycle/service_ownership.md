@@ -1,5 +1,6 @@
 ---
 title: Service Ownership
+summary: "All services running in production environments have registered ownership, ensuring clear accountability for maintenance, support, and security."
 weight: 50
 control_code: SDLC-CTRL-0011
 level: 1
@@ -16,6 +17,11 @@ nist-sp-800-53r5_references:
     note: Incident handling — clear ownership enables rapid incident response by identifying the responsible team.
   - id: pl-2
     note: Security and privacy plans — ownership assignment ensures accountability for each service's security posture.
+soc2-type2_references:
+  - id: cc1.3
+    note: Requires defined accountability and authority for control activities; service ownership establishes who is responsible for each system component.
+  - id: a1.2
+    note: Requires monitoring and maintenance of infrastructure supporting system availability; service owners are accountable for the availability and health of their services.
 mitigates:
   - audit_and_compliance_failure
   - environment_breach
@@ -25,9 +31,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-All services running in production environments have registered ownership, ensuring clear accountability for maintenance, support, and security.
 
 ## Description
 In any governance system, risks are managed by controls, but humans are ultimately responsible. In diverse software landscapes, a register of service ownership is essential for multiple reasons:
@@ -49,6 +52,8 @@ Service ownership maps live systems to the teams and individuals accountable for
 At this stage, as we have a relatively simple system and a single tech team, simply recording the services in [Kosli's environment monitoring]({{< ref "workload_monitoring.md" >}}) meets this need.
 
 {{< figure src="/images/secrets-management.svg" alt="Service Ownership" >}}
+
+{{< compliance_refs >}}
 
 ## Links
 - [Kosli — Environments](https://docs.kosli.com/getting_started/environments/)

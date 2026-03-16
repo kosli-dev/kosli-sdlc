@@ -1,5 +1,6 @@
 ---
 title: Secrets Management
+summary: "Build and runtime secrets are stored securely in dedicated secrets management systems, with documented ownership, rotation schedules, and access controls."
 weight: 30
 control_code: SDLC-CTRL-0014
 level: 1
@@ -18,6 +19,13 @@ nist-sp-800-53r5_references:
     note: Access enforcement — access to secrets must be restricted based on role and environment.
   - id: au-12
     note: Audit record generation — secret access and rotation events must be logged.
+soc2-type2_references:
+  - id: cc6.1
+    note: Requires protection of credentials and information assets through access controls; secrets management centralises credential storage and access.
+  - id: cc6.7
+    note: Requires restriction of access credentials to authorised individuals; maps to secret rotation, least-privilege access, and audit logging.
+  - id: cc6.3
+    note: Requires role-based access to sensitive resources; secrets management enforces that only authorised services and personnel can retrieve credentials.
 mitigates:
   - credential_and_secret_exposure
   - insider_threat
@@ -28,9 +36,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-Build and runtime secrets are stored securely in dedicated secrets management systems, with documented ownership, rotation schedules, and access controls.
 
 ## Description
 Secrets — such as API keys, cryptographic keys, and identity tokens — must be stored securely and documented in a central place. [Cryptographic failures are the second highest risk in the OWASP top ten](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/), so rigour and process is essential.
@@ -77,6 +82,8 @@ Effective secrets management requires secure storage, strict access controls, re
   - any secret will expire within the next month
   - any new secrets have been added
 - If a secret is going to expire soon a message is sent to our dedicated [Slack channel](https://kosli-internal.slack.com/archives/C07P4AUQGHH).
+
+{{< compliance_refs >}}
 
 ## Links
 - [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html)

@@ -1,5 +1,6 @@
 ---
 title: Deployment Approvals
+summary: "All deployments to production are approved by someone other than the person making the change, meeting segregation of duties requirements."
 weight: 40
 control_code: SDLC-CTRL-0010
 level: 1
@@ -18,6 +19,11 @@ nist-sp-800-53r5_references:
     note: Audit record generation — deployment approvals must be recorded as part of the change audit trail.
   - id: ca-7
     note: Continuous monitoring — deployment approval is a gate in the continuous assurance process.
+soc2-type2_references:
+  - id: cc8.1
+    note: Requires changes to be authorised before migration to production; deployment approvals enforce formal sign-off prior to release.
+  - id: cc3.4
+    note: Requires evaluation of changes for risks; deployment approval gates ensure compliance checks pass before production deployment.
 mitigates:
   - insider_threat
   - unauthorised_deployment
@@ -27,9 +33,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-All deployments to production are approved by someone other than the person making the change, meeting segregation of duties requirements.
 
 ## Description
 Segregation of duties is a common requirement in regulated or high-security development environments. It means that a developer cannot deploy their own changes without approval from someone who both understands what is changing and accepts the risk of the change.
@@ -49,6 +52,8 @@ Deployment approval controls form a key role in the secure software development 
 
 * We use git tags to trigger and record deployment approvals
 * CI/CD pipelines generate attestations for [Kosli approvals](https://docs.kosli.com/getting_started/approvals/)
+
+{{< compliance_refs >}}
 
 ## Links
 - [Kosli — Approvals](https://docs.kosli.com/getting_started/approvals/)

@@ -1,5 +1,6 @@
 ---
 title: Infrastructure and Configuration as Code
+summary: "Infrastructure and configurations are defined as code, stored in version control, and applied through automation to ensure auditability and reproducibility."
 weight: 50
 control_code: SDLC-CTRL-0005
 level: 1
@@ -20,6 +21,13 @@ nist-sp-800-53r5_references:
     note: Developer configuration management — infrastructure definitions are subject to the same controls as application source code.
   - id: sc-28
     note: Protection of information at rest — infrastructure definitions include security configurations for data protection.
+soc2-type2_references:
+  - id: cc8.1
+    note: Requires changes to be authorised and tested; infrastructure as code subjects environment changes to the same review and approval process as application code.
+  - id: cc6.1
+    note: Requires logical access controls; maps to controlling who can modify infrastructure definitions and deploy configuration changes.
+  - id: cc7.1
+    note: Requires infrastructure to be managed to meet objectives; codified infrastructure ensures environments are consistent and reproducible.
 mitigates:
   - configuration_drift
   - insider_threat
@@ -30,9 +38,6 @@ related_mitigations:
 ---
 # {{% param "title" %}}
 {{< area_head >}}
-
-## Summary
-Infrastructure and configurations are defined as code, stored in version control, and applied through automation to ensure auditability and reproducibility.
 
 ## Description
 Infrastructure setup, configuration, and evolution must be auditable, secure, and reproducible. Defining cloud environments as code and using automation tools to roll out changes ensures that infrastructure changes go through the same rigorous processes as application code — including version control, peer review, and automated testing.
@@ -51,6 +56,8 @@ Infrastructure as code eliminates manual configuration steps that are error-pron
 * We define all our production and test infrastructure using code. Changes are rolled out via CI pipelines in {{% param "gitProvider" %}}
 * We use the appropriate tooling for the type and level of the change (e.g. Terraform for infrastructure, Docker for application runtimes)
 * All documentation around our infrastructure, security approaches and automation is maintained and up-to-date in our [Knowledge Base](https://github.com/kosli-dev/knowledge-base)
+
+{{< compliance_refs >}}
 
 ## Links
 - [Terraform by HashiCorp](https://www.terraform.io/)
