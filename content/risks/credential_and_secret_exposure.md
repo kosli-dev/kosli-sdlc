@@ -9,8 +9,8 @@ mitigations:
     url: "/controls/runtime/secrets_managment/"
   - name: "Version Control"
     url: "/controls/build/versioncontrol/"
-  - name: "Security Vulnerability Scanning"
-    url: "/controls/release/security/"
+  - name: "Secrets Scanning"
+    url: "/controls/build/secrets-scanning/"
   - name: "System Access Controls"
     url: "/controls/runtime/system_access/"
 ---

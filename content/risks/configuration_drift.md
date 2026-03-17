@@ -13,6 +13,8 @@ mitigations:
     url: "/controls/runtime/deployment_controls/"
   - name: "Change Records"
     url: "/controls/runtime/change_records/"
+  - name: "Drift Detection"
+    url: "/controls/runtime/drift_detection/"
 ---
 
 # {{% param "title" %}}

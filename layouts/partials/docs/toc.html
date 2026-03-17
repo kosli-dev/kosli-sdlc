@@ -1,7 +1,21 @@
 {{ partial "docs/inject/toc-before" . }}
 <h3 class="fw-700">On this page</h3>
 <div class="toc-container">
+    {{ if .Params.summary }}
+    {{/* Control pages: build TOC manually to include shortcode-generated headings in correct order */}}
+    <nav id="TableOfContents">
+      <ul>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#how-we-implement-this-control">How we implement this control</a></li>
+        <li><a href="#compliance-frameworks">Compliance Frameworks</a></li>
+        <li><a href="#links">Links</a></li>
+      </ul>
+    </nav>
+    {{ else }}
     {{ .TableOfContents }}
+    {{ end }}
 </div>
 
 {{ partial "docs/inject/toc-after" . }}

@@ -7,6 +7,10 @@ description: "External attacker running workloads in our system."
 mitigations:
   - name: "Workload Monitoring"
     url: "/controls/runtime/workload_monitoring/"
+  - name: "Penetration Testing"
+    url: "/controls/lifecycle/penetration_testing/"
+  - name: "System Access Controls"
+    url: "/controls/runtime/system_access/"
 ---
 
 # {{% param "title" %}}

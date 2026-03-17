@@ -1,0 +1,30 @@
+<h2 id="compliance-frameworks">
+  Compliance Frameworks
+  <a class="anchor" href="#compliance-frameworks">#</a>
+</h2>
+
+{{/* NIST SP 800-53 Rev. 5 References */}}
+{{ $nist := index .Page.Params "nist-sp-800-53r5_references" }}
+{{ with $nist }}
+<details class="book-hint info">
+  <summary><strong>NIST SP 800-53 Rev. 5</strong></summary>
+  <ul>
+  {{ range . }}
+    <li><strong>{{ .id | upper }}</strong> — {{ .note }}</li>
+  {{ end }}
+  </ul>
+</details>
+{{ end }}
+
+{{/* SOC 2 Type II References */}}
+{{ $soc2 := index .Page.Params "soc2-type2_references" }}
+{{ with $soc2 }}
+<details class="book-hint info">
+  <summary><strong>SOC 2 Type II</strong></summary>
+  <ul>
+  {{ range . }}
+    <li><strong>{{ .id | upper }}</strong> — {{ .note }}</li>
+  {{ end }}
+  </ul>
+</details>
+{{ end }}

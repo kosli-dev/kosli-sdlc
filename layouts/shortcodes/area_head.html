@@ -1,12 +1,18 @@
 <blockquote class="book-hint info">
   Control ID: {{ .Page.Params.control_code }}
+  {{ with .Page.Params.type }}
+  | Type: {{ if eq . "PREV" }}Preventive{{ else if eq . "DET" }}Detective{{ else }}{{ . }}{{ end }}
+  {{ end }}
 </blockquote>
-<blockquote class="book-hint info">
-  TLDR: {{ .Page.Params.tldr }}
-</blockquote>
-<blockquote class="book-hint info">
-  Rationale: {{ .Page.Params.rationale }}
-</blockquote>
+
+{{/* Summary — rendered as a standard heading matching Description/Requirements style */}}
+{{ with .Page.Params.summary }}
+<h2 id="summary">
+  Summary
+  <a class="anchor" href="#summary">#</a>
+</h2>
+<p>{{ . }}</p>
+{{ end }}
 
 {{/* Reverse-lookup: find which risks this control mitigates.
      Each risk page in /risks/ has a "mitigations" list in its

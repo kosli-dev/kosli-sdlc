@@ -1,29 +1,66 @@
 ---
 title: System Access Controls
-level: 1
+summary: "All access to runtime environments requires authentication via SSO and generates full audit trails for review."
 weight: 40
 control_code: SDLC-CTRL-0015
-tldr: All access to runtime environments requires authentication and audit trails
-rationale: To meet our system access control policy, all access must be approved and auditable
-areas: 
- - change
+level: 1
+doc-status: Draft
+type: PREV
+areas:
+  - change
+nist-sp-800-53r5_references:
+  - id: ac-2
+    note: Account management — governs provisioning, review, and revocation of access to production systems.
+  - id: ac-3
+    note: Access enforcement — requires consistent enforcement of access controls on all production environments.
+  - id: ac-6
+    note: Least privilege — access to runtime environments must be limited to the minimum necessary for the task.
+  - id: ac-17
+    note: Remote access — remote access to production systems must be controlled, monitored, and encrypted.
+  - id: au-3
+    note: Content of audit records — all access activities must be logged with sufficient detail for forensic analysis.
+  - id: au-12
+    note: Audit record generation — the system must generate audit records for all access to production environments.
+  - id: ia-2
+    note: Identification and authentication — all users must be uniquely identified and authenticated before accessing production systems.
+soc2-type2_references:
+  - id: cc6.1
+    note: Requires logical access security over information assets; maps directly to system access control policies and enforcement mechanisms.
+  - id: cc6.2
+    note: Requires authentication of users before granting access; maps to SSO, MFA, and identity provider integration.
+  - id: cc6.3
+    note: Requires authorisation based on roles and responsibilities; maps to RBAC policies and least-privilege access models.
+mitigates:
+  - unauthorised_system_access
+  - insider_threat
+  - environment_breach
+related_mitigations:
+  - SDLC-CTRL-0014
+  - SDLC-CTRL-0016
 ---
-
 # {{% param "title" %}}
 {{< area_head >}}
 
-## Background
+## Description
+As part of normal software development, it can be necessary to gain remote access to runtime environments for debugging, running migration scripts, or inspecting the behaviour of running systems. This access must be limited to authorised personnel, and all activities performed must have full audit trails.
 
-As part of normal software development, it can be necessary to gain remote access to runtime environments.  This can be for many reasons:
+Access controls ensure that only authenticated, authorised individuals can interact with production systems, and that every session is logged for forensic analysis and compliance reporting.
 
-* Debugging the runtime environment
-* Running migration scripts
-* Inspecting the behaviour of running systems
-
-This must be limited to authorized personnel and all activities performed should have full audit trails.
+## Requirements
+* All access to production environments MUST require authentication via single sign-on (SSO) or equivalent identity provider
+* All access sessions MUST generate audit trails recording who accessed what, when, and what actions were performed
+* Access MUST be limited to authorised personnel on a least-privilege basis
+* Access audit trails MUST be reviewed regularly
+* Remote access to production systems MUST be encrypted
 
 ## How we implement this control
 
-* Any remote shell session require SSO authentication and full adit trails are logged in Kosli here: https://app.kosli.com/kosli/audit-trails
+* Any remote shell session requires SSO authentication and full audit trails are logged in Kosli here: https://app.kosli.com/kosli/audit-trails
 * This forms part of our [System Access Control Policy](https://app.drata.com/policy-builder/18)
 * All access audit trails are reviewed
+
+{{< compliance_refs >}}
+
+## Links
+- [NIST SP 800-53r5 AC-17: Remote Access](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf)
+- [OWASP Access Control Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html)

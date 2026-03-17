@@ -5,14 +5,20 @@ risk_id: SDLC-RISK-0005
 risk_key: vulnerable_software_in_production
 description: "Known vulnerabilities in code or dependencies are exploited in the production environment."
 mitigations:
-  - name: "Security Vulnerability Scanning"
-    url: "/controls/release/security/"
+  - name: "Vulnerability Scanning — SAST"
+    url: "/controls/release/vulnerability_scanning_sast/"
+  - name: "Vulnerability Scanning — SCA"
+    url: "/controls/release/vulnerability_scanning_sca/"
+  - name: "Vulnerability Scanning — Containers"
+    url: "/controls/release/vulnerability_scanning_containers/"
   - name: "Dependency Management"
     url: "/controls/build/dependencies/"
   - name: "Workload Monitoring"
     url: "/controls/runtime/workload_monitoring/"
   - name: "Quality"
     url: "/controls/release/quality/"
+  - name: "Penetration Testing"
+    url: "/controls/lifecycle/penetration_testing/"
 ---
 
 # {{% param "title" %}}
