@@ -455,11 +455,8 @@ h2.area-header{
         text-overflow: ellipsis;
     }
     &:hover {
-        background-color: var(--blue-500) !important;
-        border-color: var(--blue-500) !important;
-        opacity: 1;
+        opacity: 0.7;
         text-decoration: none;
-        color: #ffffff !important;
     }
     &:visited {
         color: #2a3040 !important;
