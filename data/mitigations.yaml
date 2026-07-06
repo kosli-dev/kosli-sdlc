@@ -23,5 +23,8 @@
 - id: vulnerability_scanning_containers
   path: "process/vulnerability_scanning_containers"
 
+- id: vulnerability_scanning_containers_runtime
+  path: "runtime/vulnerability_scanning_containers_runtime"
+
 - id: service_ownership
   path: "lifecycle/service_ownership"
