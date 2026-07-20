@@ -45,6 +45,8 @@ Even when infrastructure is defined as code and applied through automation, conf
 
 Drift detection complements the preventative control of defining infrastructure as code (SDLC-CTRL-0005) by providing a detective layer that identifies when the actual state diverges from the declared state, regardless of how the change occurred.
 
+{{< figure src="/images/infrastructure-drift-detection.png" alt="Infrastructure change and drift detection: the Terraform pipeline attests changes to Kosli while drift detection snapshots the statefile, enabling continuous monitoring of desired versus actual state" >}}
+
 ## Requirements
 * Production infrastructure MUST be continuously monitored for configuration drift from the approved baseline
 * Detected drift MUST generate alerts to the appropriate response channels

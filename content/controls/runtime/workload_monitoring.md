@@ -44,7 +44,7 @@ Ensuring that risks are controlled in the value stream is the first level of sof
 
 Runtime workload monitoring provides a forensic history of all changes to production environments, enabling retrospective analysis of what was running at any point in time. Combined with deployment controls, it creates a closed-loop compliance system that both prevents and detects unauthorised changes.
 
-{{< figure src="/images/workload-monitoring.jpg" alt="Workload Monitoring" >}}
+{{< figure src="/images/production-integrity.png" alt="Production integrity: runtime workloads and pipeline events are recorded to Kosli for continuous monitoring of production integrity" >}}
 
 ## Requirements
 * All production workloads MUST be continuously monitored for compliance status

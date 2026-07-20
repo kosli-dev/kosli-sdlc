@@ -63,7 +63,7 @@ Human-friendly identifiers such as semantic versions or git commit references ar
 
 We use Kosli to record every official build in our CI system. The audit trails for our binary provenance can be found here: https://app.kosli.com/kosli/flows/
 
-{{< figure src="/images/binary-provenance.svg" alt="Binary Provenance" >}}
+{{< figure src="/images/supply-chain-security.png" alt="Software supply chain security: a chain of fingerprinted attestations (provenance, SBOM, SAST and DAST) verified by a control gate before production" >}}
 
 {{< compliance_refs >}}
 

@@ -21,6 +21,8 @@ processes haven't kept pace. Legacy models relying on manual documentation,
 change advisory boards, and human approvals introduce friction and delay that
 modern software delivery cannot sustain.
 
+{{< figure src="/images/governance-bottleneck-funnel.png" alt="Changes queuing behind a manual governance bottleneck, compared with changes flowing freely through automated Kosli checks" >}}
+
 Consider the real cost: one engineer at a major financial institution documented
 81 individual steps just to create and approve the paperwork needed to deploy a
 single line of code. Three different tickets. Multiple meetings. All of this
