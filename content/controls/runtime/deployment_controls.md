@@ -41,7 +41,7 @@ Deployment controls automatically ensure that only software which has gone throu
 
 Pipeline gates verify that all required attestations (tests, reviews, scans, approvals) are present and passing before allowing deployment. Runtime monitoring provides a second layer of assurance, alerting when non-compliant or unauthorised workloads are detected in production.
 
-{{< figure src="/images/deployment-controls.svg" alt="Deployment Controls" >}}
+{{< figure src="/images/automated-change-management.png" alt="An admission controller verifies compliance constraints against evidence stored in Kosli before deploying to production" >}}
 
 ## Requirements
 * Deployment pipelines MUST verify that all required compliance attestations are present and passing before deploying to production

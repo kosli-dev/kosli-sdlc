@@ -65,6 +65,9 @@ Note: the reviewer should not be the person who pushes the last commit on the br
 * We use pull requests to document reviews in GitHub
 * We protect the `main` branch in each repository
 * We record the pull requests in Kosli and control/monitor that no runtime workload is missing PR attestations
+* Alongside human review, every pull request is reviewed by our multi-LLM review system, with each review step attested to a Kosli trail:
+
+{{< figure src="/images/ai-persona-reviews.png" alt="A Kosli trail for a pull request review, showing each step of the multi-LLM review pipeline attested as compliant" >}}
 
 {{< compliance_refs >}}
 

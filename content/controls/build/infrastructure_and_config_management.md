@@ -44,6 +44,8 @@ Infrastructure setup, configuration, and evolution must be auditable, secure, an
 
 Infrastructure as code eliminates manual configuration steps that are error-prone and difficult to audit. It enables teams to reproduce environments consistently across development, testing, and production, and provides a clear audit trail of what changed, when, and by whom.
 
+{{< figure src="/images/infrastructure-drift-detection.png" alt="Infrastructure changes flow through a Terraform pipeline that attests each apply to Kosli, while statefile tracking enables continuous monitoring of desired versus actual state" >}}
+
 ## Requirements
 * All production and test infrastructure MUST be defined as code and stored in version control
 * Infrastructure changes MUST be rolled out via automated CI pipelines
