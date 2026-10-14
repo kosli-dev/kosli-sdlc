@@ -1,4 +1,4 @@
-baseURL = "https://devopsctl.com/"
+baseURL = "https://sdlc.kosli.com/"
 languageCode = "en-us"
 title = "Kosli's Software Development Lifecycle"
 theme = "hugo-book"
